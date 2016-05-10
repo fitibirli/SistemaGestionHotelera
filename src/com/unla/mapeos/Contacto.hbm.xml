@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Contacto" table="contacto">
+		<id column="idContacto" name="idContacto">
+			<generator class="identity" />
+		</id>
+		<property column="telefono" name="telefono" type="long" />
+		<property column="celular" name="celular" type="long" />
+		<property column="email" name="email" type="String" />
+	</class>
+</hibernate-mapping>
