@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Direccion" table="direccion">
+		<id column="idDireccion" name="idDireccion">
+			<generator class="identity" />
+		</id>
+		<property column="calle" name="calle" type="string" />
+		<property column="numero" name="numero" type="int" />
+		<property column="codigoPostal" name="codigoPostal" type="String" />
+	</class>
+</hibernate-mapping>
