@@ -1,3 +1,4 @@
+//hola grupo
 package funciones;
 import java.io.BufferedReader;
 import java.io.File;
