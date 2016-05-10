@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Estadia" table="estadia">
+		<id column="idEstadia" name="idEstadia">
+			<generator class="identity" />
+		</id>
+		<property column="fechaIngreso" name="fechaIngreso" type="calendar" />
+		<property column="fechaSalida" name="fechaSalida" type="string" />
+	</class>
+</hibernate-mapping>
+

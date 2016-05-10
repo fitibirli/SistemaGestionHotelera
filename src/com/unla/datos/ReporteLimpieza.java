@@ -7,7 +7,7 @@ public class ReporteLimpieza {
 	private int idReporteLimpieza;
 	private GregorianCalendar fecha;
 	private Empleado mucama;
-	private boolean desperfecto;
+	private String desperfecto;
 
 	public int getIdReporteLimpieza() {
 		return idReporteLimpieza;
@@ -33,12 +33,13 @@ public class ReporteLimpieza {
 		this.mucama = mucama;
 	}
 
-	public boolean isDesperfecto() {
+	public String getDesperfecto() {
 		return desperfecto;
 	}
 
-	public void setDesperfecto(boolean desperfecto) {
+	public void setDesperfecto(String desperfecto) {
 		this.desperfecto = desperfecto;
 	}
+
 
 }
