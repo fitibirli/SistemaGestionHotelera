@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.Empleado" table="empleado">
+	<class name="datos.Empleado" table="Empleado">
 		<id column="legajo" name="legajo">
 			<generator class="identity" />
 		</id>
