@@ -11,6 +11,6 @@
 			<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 			<property name="show_sql">true</property> <!-- en true muestra hql en consola -->
 			<!--Mapeo Entidades -->
-			<mapping resource="mapeos/Cliente.hbm.xml" />
+			<mapping resource="com.unla.mapeos/Cliente.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

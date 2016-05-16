@@ -12,14 +12,14 @@
 		<TABLE border="0">
 			<TR>
 				<TD>Usuario:</TD>
-				<TD><INPUT name="usuario"></TD>
+				<TD><INPUT required name="usuario"></TD>
 			</TR>
 			<TR>
 				<TD>Contraseña:</TD>
-				<TD><INPUT name="contrasenia"></TD>
+				<TD><INPUT name="contrasenia" required type="password"></TD>
 			</TR>
 			<TR>
-				<TD><INPUT type="submit" value="Ingresar"></TD>
+				<TD><INPUT type="submit" name="ingresar" value="Ingresar"></TD>
 			</TR>
 		</TABLE>
 	</FORM>
