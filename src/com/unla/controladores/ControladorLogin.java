@@ -22,7 +22,25 @@ public class ControladorLogin extends HttpServlet {
 		//Login login = new Login(usuario,contrasenia, null);
 		request.setAttribute("usuario", usuario);
 		request.setAttribute("contrasenia", contrasenia);
-		request.getRequestDispatcher("/bienvenido.jsp").forward(request, response);;
+		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
+
+		} catch (Exception e) {
+			response.sendError(500, "");
+		}
+
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+	ServletException, IOException {
+		
+		try {
+		//LoginABM lbm1 = new LoginABM();
+		String usuario = request.getParameter("usuario");
+		String contrasenia = request.getParameter("clave");
+		//Login login = new Login(usuario,contrasenia, null);
+		request.setAttribute("usuario", usuario);
+		request.setAttribute("contrasenia", contrasenia);
+		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
 
 		} catch (Exception e) {
 			response.sendError(500, "");
