@@ -31,7 +31,6 @@ public class ControladorLogin extends HttpServlet {
 
 		} catch (Exception e) {
 			request.getRequestDispatcher("/jsp/errorlogin.jsp").forward(request, response);;
-			response.sendError(500, "");
 		}
 
 	}

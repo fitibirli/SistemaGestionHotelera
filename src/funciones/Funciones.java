@@ -407,7 +407,7 @@ public class Funciones {
 			List<GregorianCalendar> feriados = new ArrayList<GregorianCalendar>();
 			try {
 
-			File dirBase = new File("src/datos/feriados.xml");
+			File dirBase = new File("src/com.unla.datos/feriados.xml");
 			String ruta = dirBase.getAbsolutePath();
 			BufferedReader br = new BufferedReader(new FileReader(ruta));
 			String entrada;

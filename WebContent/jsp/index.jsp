@@ -23,5 +23,7 @@
 			</TR>
 		</TABLE>
 	</FORM>
+	
+	<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
 </body>
 </html>
