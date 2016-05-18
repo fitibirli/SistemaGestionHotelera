@@ -13,7 +13,7 @@ public class ClienteABM {
 	
 	private ClienteDao dao = new ClienteDao();
 	
-	public void crearCliente(String nombre, String apellido, long dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia, String descripcion) throws Exception{
+	public void crearCliente(String nombre, String apellido, long dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia) throws Exception{
 		
 		Cliente cliente = new Cliente();
 		
@@ -27,7 +27,7 @@ public class ClienteABM {
 		
 		login.setUsuario(usuario);
 		login.setContrasenia(contrasenia);
-		privilegio.setDescripcion(descripcion);
+		//privilegio.setDescripcion(descripcion);
 		
 		login.setPrivilegio(privilegio);
 		cliente.setLogin(login);
