@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.unla.dao.ClienteDao;
 import com.unla.datos.Cliente;
+import com.unla.datos.Privilegio;
 import com.unla.datos.Login;
 import com.unla.excepciones.YaExisteClienteException;
 
@@ -12,7 +13,7 @@ public class ClienteABM {
 	
 	private ClienteDao dao = new ClienteDao();
 	
-	public void crearCliente(String nombre, String apellido, long dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia) throws Exception{
+	public void crearCliente(String nombre, String apellido, long dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia, int idPrivilegio, String descripcion) throws Exception{
 		
 		Cliente cliente = new Cliente();
 		
@@ -22,12 +23,16 @@ public class ClienteABM {
 		
 		
 		Login login = new Login();
+		Privilegio privilegio=new Privilegio();
 		
 		login.setUsuario(usuario);
 		login.setContrasenia(contrasenia);
+		privilegio.setIdPrivilegio(idPrivilegio);
+		privilegio.setDescripcion(descripcion);
 		
+		login.setPrivilegio(privilegio);
 		cliente.setLogin(login);
-		
+	
 		
 		List<Cliente> listaClientes = dao.traerCliente();
 		
