@@ -1,13 +1,18 @@
 package com.unla.negocio;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import com.unla.dao.ClienteDao;
 import com.unla.datos.Cliente;
+import com.unla.datos.Estadia;
+import com.unla.datos.Habitacion;
 import com.unla.datos.Privilegio;
 import com.unla.datos.Login;
 import com.unla.excepciones.YaExisteClienteException;
+
+import funciones.Funciones;
 
 public class ClienteABM {
 	
@@ -47,5 +52,26 @@ public class ClienteABM {
 		
 		
 	}
-
+	
+	public List<Habitacion> traerHabitacionesDisponibles(GregorianCalendar fecha, Estadia e)
+	{
+		List<Habitacion> lista = new ArrayList<Habitacion>();
+		GregorianCalendar fechaActual = new GregorianCalendar();
+		
+		for(int i=0;i<e.getHabitaciones().size();i++)
+		{
+			if(e.getHabitaciones().get(i).isDisponible()==true)
+			{
+				if(Funciones.esAnioIgual(fecha, fechaActual) || Funciones.esAnioMayor(fecha, fechaActual))
+				{
+					if(Funciones.esMesIgual(fecha, fechaActual) || Funciones.esMesMayor(fecha, fechaActual))
+					{
+						lista.add(e.getHabitaciones().get(i));
+					}
+			}
+		}
+		}	
+		return lista;		
+	}
+	
 }
