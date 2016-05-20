@@ -143,6 +143,15 @@ public class Funciones {
 		return (traerNroAnio(f)-traerNroAnio(fecha)==1);
 	}
 	
+	public static boolean esDiaMenor(GregorianCalendar f, GregorianCalendar fecha){
+		return(traerNroDia(f)<traerNroDia(fecha));
+	}
+	public static boolean esMesMenor(GregorianCalendar f, GregorianCalendar fecha){
+		return (traerNroMes(f)<traerNroMes(fecha));
+	}
+	public static boolean esAnioMenor(GregorianCalendar f, GregorianCalendar fecha){
+		return (traerNroAnio(f)<traerNroAnio(fecha));
+	}
 	
 	public static int cantidadDiasMes(GregorianCalendar fecha){
 		Integer[] cantidad={31,28,31,30,31,30,31,31,30,31,30,31};
@@ -225,6 +234,26 @@ public class Funciones {
 		 return (traerNroAnio(fecha)==traerNroAnio(fecha1)&&traerNroMes(fecha)==traerNroMes(fecha1)&&traerNroDia(fecha)==traerNroDia(fecha1));
 	 }
 	
+	 public static boolean estaEntreFechas(GregorianCalendar fechaEntre, GregorianCalendar fecha, GregorianCalendar fechaHasta)
+	 {
+		 boolean respuesta = false;
+		 if(esAnioMayor(fechaEntre,fecha) || esAnioIgual(fechaEntre,fecha)){
+			 if(esAnioMenor(fechaHasta,fecha) || esAnioIgual(fechaHasta,fecha)){
+				 if(esMesIgual(fechaHasta,fecha) || esMesMenor(fechaHasta,fecha))
+				 {
+					 respuesta=true;
+				 }
+			 }
+			 }
+		 
+		 return respuesta;
+		 
+	 }
+	 
+	 
+	 
+	 
+	 
 	 public static double aproximar2Decimal(double valor)
 	 {
 		 String valorStr = String.valueOf(0.0055+valor);

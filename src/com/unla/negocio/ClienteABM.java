@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
 import com.unla.dao.ClienteDao;
+import com.unla.dao.EstadiaDao;
 import com.unla.datos.Cliente;
 import com.unla.datos.Estadia;
 import com.unla.datos.Habitacion;
@@ -17,6 +20,8 @@ import funciones.Funciones;
 public class ClienteABM {
 	
 	private ClienteDao dao = new ClienteDao();
+	private EstadiaDao eDao = new EstadiaDao();
+	
 	
 	public void crearCliente(String nombre, String apellido, long dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia) throws Exception{
 		
@@ -70,8 +75,27 @@ public class ClienteABM {
 					}
 			}
 		}
+			
 		}	
 		return lista;		
 	}
+	
+	public List<Habitacion> traerHabitacionesDisponibles(GregorianCalendar fecha) throws Exception
+	{
+		List<Estadia> lista = eDao.traerEstadia();
+		List<Habitacion> listaHabitacion = new ArrayList<Habitacion>();
+		for (int i = 0; i < lista.size(); i++) {
+			if(Funciones.estaEntreFechas(lista.get(i).getFechaIngreso(), fecha, lista.get(i).getFechaSalida()))
+			{
+				listaHabitacion.add(lista.get(i).getHabitaciones().get(i));
+			}	
+		}
+		
+		return listaHabitacion;
+		
+	}
+	
+	
+	
 	
 }
