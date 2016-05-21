@@ -12,12 +12,35 @@ public class Cliente {
 	private Contacto contacto;
 	private Direccion direccion;
 	private Login login;
+
+	public Cliente()
+	{	
+	}
 	
+	public Cliente(String nombre, String apellido, long dni, CuentaCliente cuenta, Contacto contacto,
+			Direccion direccion, Login login) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.cuenta = cuenta;
+		this.contacto = contacto;
+		this.direccion = direccion;
+		this.login = login;
+	}
+
+	//Constructor para modificar datos	
+	public Cliente(Contacto contacto, Direccion direccion, Login login) {
+		super();
+		this.contacto = contacto;
+		this.direccion = direccion;
+		this.login = login;
+	}
 	
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

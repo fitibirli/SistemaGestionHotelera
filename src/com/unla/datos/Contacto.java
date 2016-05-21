@@ -7,7 +7,16 @@ public class Contacto {
 	private long celular;
 	private String email;
 	
+	public Contacto() {
+	}
 	
+	public Contacto(long telefono, long celular, String email) {
+		super();
+		this.telefono = telefono;
+		this.celular = celular;
+		this.email = email;
+	}
+
 	public int getIdContacto() {
 		return idContacto;
 	}
