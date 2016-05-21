@@ -101,7 +101,16 @@ public class ClienteABM {
 		dao.actualizar(c);
 	}
 	
-	
+	public void modificarDatos(Cliente c, String nombre, String apellido, long telefono, long celular, String email, String calle, int numero, String codigoPostal)
+	{
+		Contacto cc = new Contacto(telefono, celular, email);
+		Direccion dc = new Direccion(calle, numero, codigoPostal);
+		c.setNombre(nombre);
+		c.setApellido(apellido);
+		c.setContacto(cc);
+		c.setDireccion(dc);
+		dao.actualizar(c);
+	}
 	
 	
 	

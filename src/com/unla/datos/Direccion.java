@@ -6,6 +6,13 @@ public class Direccion {
 	private String calle;
 	private int numero;
 	private String codigoPostal;
+
+	public Direccion(String calle, int numero, String codigoPostal)
+	{
+		this.calle=calle;
+		this.numero=numero;
+		this.codigoPostal=codigoPostal;
+	}
 	
 	public int getIdDireccion() {
 		return idDireccion;
