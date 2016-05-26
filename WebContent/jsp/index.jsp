@@ -8,7 +8,7 @@
 <body>
 
 <%!Hotel hotel=Hotel.getInstanciaHotel();%>
-<%=hotel.getNombre()%>
+###########<%=hotel.getNombre()%>##########<%=hotel.getCuil()%>############<%=hotel.getContacto().getEmail()%>
 
 	<FORM method="POST" action="/SistemaGestionHotelera/MostrarInicio">
 		Login<BR>
@@ -29,8 +29,7 @@
 			</TR>
 		</TABLE>
 	</FORM>
-<%=hotel.getNombre()%>
-	
+###########<%=hotel.getNombre()%>##########<%=hotel.getCuil()%>############<%=hotel.getContacto().getEmail()%>	
 	<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
 
 </body>

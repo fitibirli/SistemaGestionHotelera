@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Hotel {
 	private static Hotel instanciaHotel ;
-	protected long cuil;
+	protected String cuil;
 	protected String nombre;
 	protected List<Servicio> servicios;
 	protected int categoria;
 	protected Contacto contacto;
-	protected GregorianCalendar checkIn;
-	protected GregorianCalendar checkOut;
+	protected String checkIn;
+	protected String checkOut;
 	protected Direccion direccion;
 
 	protected Hotel() {
@@ -25,7 +25,10 @@ public class Hotel {
 		return instanciaHotel;
 	}
 
-	public long getCuil() {
+	public void setCuil(String cuil) {
+		this.cuil=cuil;
+	}
+	public String getCuil() {
 		return cuil;
 	}
 
@@ -53,21 +56,25 @@ public class Hotel {
 	public void setContacto(Contacto contacto) {
 		this.contacto = contacto;
 	}
-	public GregorianCalendar getCheckIn() {
+	public String getCheckIn() {
 		return checkIn;
 	}
-	public void setCheckIn(GregorianCalendar checkIn) {
+	public void setCheckIn(String checkIn) {
 		this.checkIn = checkIn;
 	}
-	public GregorianCalendar getCheckOut() {
+	public String getCheckOut() {
 		return checkOut;
 	}
-	public void setCheckOut(GregorianCalendar checkOut) {
+	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
 	private void inicializar() { // pueden leer la instancia de un archivo xml
+		this.setCuil("23-36771843-9");
 		this.setNombre("SistemaGestionHotelera");
 		this.setCategoria(3);
-		
+		this.setContacto(new Contacto(42303233,1567892345,"gestionhotelera@sistgestionhotelera.com"));
+		this.setCheckIn("10:30");
+		this.setCheckOut("23:30");
+		this.setDireccion(new Direccion("ituzaingo",3168,"C1824H"));
 	}
 }

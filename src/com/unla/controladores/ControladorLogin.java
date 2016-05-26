@@ -8,10 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.unla.datos.Cliente;
+import com.unla.datos.Hotel;
 import com.unla.datos.Login;
 import com.unla.negocio.LoginABM;
 public class ControladorLogin extends HttpServlet {
-	
+	Hotel hotel=Hotel.getInstanciaHotel();		
 	private static final long serialVersionUID = 1L;
 	
 	/* NO deberia atender por GET */
@@ -20,6 +21,7 @@ public class ControladorLogin extends HttpServlet {
 		
 		try {
 		LoginABM loginABM = new LoginABM();
+
 		String usuario = request.getParameter("usuario");
 		String contrasenia = request.getParameter("clave");
 		
@@ -27,6 +29,7 @@ public class ControladorLogin extends HttpServlet {
 		
 		request.setAttribute("usuario", cliente.getLogin().getUsuario());
 		request.setAttribute("contrasenia", cliente.getLogin().getContrasenia());
+
 		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
 
 		} catch (Exception e) {
@@ -42,7 +45,7 @@ public class ControladorLogin extends HttpServlet {
 		LoginABM loginABM = new LoginABM();
 		String usuario = request.getParameter("usuario");
 		String contrasenia = request.getParameter("clave");
-		
+				
 		Cliente cliente = loginABM.validarCliente(usuario, contrasenia);
 		
 		request.setAttribute("usuario", cliente.getLogin().getUsuario());

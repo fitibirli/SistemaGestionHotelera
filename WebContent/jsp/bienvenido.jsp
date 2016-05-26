@@ -6,6 +6,6 @@
 <title>Bienvendido, Sistema Gestion Hotelera:</title>
 </head>
 <body>
-	Bienvenido Usuario: <%= request.getAttribute("usuario") %>
+	Bienvenido Usuario: <%@= request.getAttribute("usuario") %>
 </body>
 </html>
