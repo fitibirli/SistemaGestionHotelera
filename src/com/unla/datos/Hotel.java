@@ -4,41 +4,48 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Hotel {
-	
-	private long cuil;
-	private String nombre;
-	private List<Servicio> servicios;
-	private int categoria;
-	private Contacto contacto;
-	private GregorianCalendar checkIn;
-	private GregorianCalendar checkOut;
-	private Direccion direccion;
-	private List<Habitacion> habitaciones;
-	
-	
+	private static Hotel instanciaHotel ;
+	protected long cuil;
+	protected String nombre;
+	protected List<Servicio> servicios;
+	protected int categoria;
+	protected Contacto contacto;
+	protected GregorianCalendar checkIn;
+	protected GregorianCalendar checkOut;
+	protected Direccion direccion;
+
+	protected Hotel() {
+		this.inicializar();
+	}
+
+	public static Hotel getInstanciaHotel() {
+		if (instanciaHotel == null) {
+			instanciaHotel = new Hotel();
+		}
+		return instanciaHotel;
+	}
+
 	public long getCuil() {
 		return cuil;
 	}
-	public void setCuil(long cuil) {
-		this.cuil = cuil;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public List<Servicio> getServicios() {
-		return servicios;
-	}
-	public void setServicios(List<Servicio> servicios) {
-		this.servicios = servicios;
-	}
-	public int getCategoria() {
-		return categoria;
-	}
+
 	public void setCategoria(int categoria) {
 		this.categoria = categoria;
+	}
+
+	public Direccion getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
 	}
 	public Contacto getContacto() {
 		return contacto;
@@ -58,18 +65,9 @@ public class Hotel {
 	public void setCheckOut(GregorianCalendar checkOut) {
 		this.checkOut = checkOut;
 	}
-	public Direccion getDireccion() {
-		return direccion;
+	private void inicializar() { // pueden leer la instancia de un archivo xml
+		this.setNombre("SistemaGestionHotelera");
+		this.setCategoria(3);
+		
 	}
-	public void setDireccion(Direccion direccion) {
-		this.direccion = direccion;
-	}
-	public List<Habitacion> getHabitaciones() {
-		return habitaciones;
-	}
-	
-	public void agregarHabitacion(Habitacion habitacion){
-		this.habitaciones.add(habitacion);
-	}
-	
 }
