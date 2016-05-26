@@ -31,6 +31,7 @@
 	</FORM>
 ###########<%=hotel.getNombre()%>##########<%=hotel.getCuil()%>############<%=hotel.getContacto().getEmail()%>	
 	<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
+	<a href="/SistemaGestionHotelera/jsp/verofertas.jsp">Ver ofertas!</a>
 
 </body>
 </html>
