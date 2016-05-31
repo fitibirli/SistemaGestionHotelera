@@ -112,7 +112,23 @@ public class ClienteABM {
 		dao.actualizar(c);
 	}
 	
+	//en proceso
+	/*public Estadia consultarReserva(Cliente c)
+	{
+		List<Estadia> lista = eDao.traerEstadia();
+		Estadia e = new Estadia();
+		for (int i = 0; i < lista.size(); i++) {
+			if(lista.getEstadoEstadia().getCliente().equals(c))
+			{
+				e=lista.getEstadia();
+			}
+		}
+		
+		return e;
+		
+	}
 	
+	*/
 	
 	
 	

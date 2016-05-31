@@ -9,8 +9,9 @@
 		<property column="apellido" name="apellido" type="string" />
 		<property column="nombre" name="nombre" type="string" />
 		<property column="dni" name="dni" type="int" />
-		<property column="fechaDeNacimiento" name="fechaDeNacimiento"
-			type="calendar" />
+		<property column="fechaDeNacimiento" name="fechaDeNacimiento" type="calendar" />
 		<property column="baja" name="baja" type="boolean" />
+		
+		<one-to-one name="login" class="com.unla.datos.Login" ></one-to-one>
 	</class>
 </hibernate-mapping>

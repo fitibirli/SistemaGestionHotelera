@@ -10,7 +10,7 @@ public class Estadia {
 	private List<Habitacion> habitaciones;
 	private GregorianCalendar fechaIngreso;
 	private GregorianCalendar fechaSalida;
-	private TipoEstado tipoEstado;
+	private EstadoEstadia estado;
 	private List<Ticket> tickets;
 
 	public int getIdEstadia() {
@@ -53,14 +53,6 @@ public class Estadia {
 		this.fechaSalida = fechaSalida;
 	}
 
-	public TipoEstado getTipoEstado() {
-		return tipoEstado;
-	}
-
-	public void setTipoEstado(TipoEstado tipoEstado) {
-		this.tipoEstado = tipoEstado;
-	}
-
 	public List<Ticket> getTickets() {
 		return tickets;
 	}
@@ -69,4 +61,31 @@ public class Estadia {
 		this.tickets = tickets;
 	}
 
+	public EstadoEstadia getEstado() {
+		return estado;
+	}
+
+	public void setEstado(EstadoEstadia estado) {
+		this.estado = estado;
+	}
+
+	public void cancelarReserva()
+	{
+		this.setEstado(this.getEstado().terminarEstadia());
+	}
+	
+	public void reservarEstadia(Cliente cliente)
+	{
+		this.setEstado(this.getEstado().reservar(cliente));
+	}
+	
+	public void confirmar(Cliente cliente)
+	{
+		this.setEstado(this.getEstado().confirmarReserva(cliente));
+	}
+	
+	public void confirmar(Empleado empleado)
+	{
+		this.setEstado(this.getEstado().confirmarReserva(empleado));
+	}
 }

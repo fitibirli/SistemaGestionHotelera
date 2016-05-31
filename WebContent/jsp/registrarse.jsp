@@ -10,16 +10,15 @@
 	<header></header>
 	<section>
 		<form method="POST" action="/SistemaGestionHotelera/Registrarse">
-			<div>
-				Nombre: <input type="text" name="nombre" />
-				Apellido: <input type="text" name="apellido"/>
-				Dni: <input type="text" name="dni" />
-				Fecha de nacimiento: <input type="date" name="fechaNacimiento" />
-				
-				Usuario: <input type="text" name="usuario" />
-				Contraseña: <input type="password" name="contrasenia" />
-				Mail: <input type="text" name="mail" />
-			
+			<div><CENTER>
+				<BR>Nombre: <input type="text" name="nombre" />
+				<BR>Apellido: <input type="text" name="apellido"/>
+				<BR>Dni: <input type="text" name="dni" />
+				<BR>Fecha de nacimiento: <input type="date" name="fechaNacimiento" />	
+				<BR>Usuario: <input type="text" name="usuario" />
+				<BR>Contraseña: <input type="password" name="contrasenia" />
+				<BR>Mail: <input type="text" name="mail" />
+				</CENTER>
 			<input type="submit" value="Enviar"/>
 			</div>
 		</form>

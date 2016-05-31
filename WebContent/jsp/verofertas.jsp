@@ -8,6 +8,7 @@
 </head>  
 <body>  
   <h1>Reservas disponibles</h1>
+  <FORM method="POST" action="/SistemaGestionHotelera/Reserva">
   		<TABLE border="0">
 			<TR>
 				<TD>Tipo:PREMIUN</TD>
@@ -31,7 +32,7 @@
 				
 			</TR>
 		</TABLE>
-			
+	</FORM>		
 		<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
 		<a href="https://www.youtube.com/watch?v=YWKWD9jDZNU">u2</a>
 </body>  

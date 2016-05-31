@@ -8,7 +8,7 @@
 <body>
 
 <%!Hotel hotel=Hotel.getInstanciaHotel();%>
-###########<%=hotel.getNombre()%>##########<%=hotel.getCuil()%>############<%=hotel.getContacto().getEmail()%>
+<h1>###########<%=hotel.getNombre()%>###########</h1>
 
 	<FORM method="POST" action="/SistemaGestionHotelera/MostrarInicio">
 		Login<BR>
@@ -20,7 +20,7 @@
 			</TR>
 			
 			<TR>
-				<TD>Contrase�a:</TD>
+				<TD>Password:</TD>
 				<TD><INPUT name="contrasenia" required type="password"></TD>
 			</TR>
 					
@@ -29,9 +29,30 @@
 			</TR>
 		</TABLE>
 	</FORM>
-###########<%=hotel.getNombre()%>##########<%=hotel.getCuil()%>############<%=hotel.getContacto().getEmail()%>	
+<h2>###########<%=hotel.getNombre()%>##########<%=hotel.getContacto().getEmail()%></h2>	
+
+<h3><i>Si no estas registrado, registrate!</i></h3>
 	<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
 	<a href="/SistemaGestionHotelera/jsp/verofertas.jsp">Ver ofertas!</a>
 
 </body>
 </html>
+
+<!--Referencias básicas HTML
+• Formato del párrafo:
+– <P>: Nuevo Párrafo
+– <BR>: Salto de línea
+– <PRE></PRE>: Texto con fuente de ancho fijo
+– <CENTER></CENTER>: Centrar texto
+• Formato del texto:
+– <B></B>: Negrita
+– <I></I>: Itálica
+– <U></U>: Subrayado
+– <SUB></SUB>: Subíndice
+– <SUP></SUP>: Superíndice
+– <H1></H1>…<H6></H6>: Cabeceras
+Listas:
+– <UL></UL>: Sin numerar
+– <OL></OL>: Numerada
+
+-->
