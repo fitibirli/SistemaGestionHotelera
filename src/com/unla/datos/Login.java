@@ -4,7 +4,7 @@ public class Login {
 
 	private int idLogin;
 	private String usuario;
-	private String contrasenia;
+	private String clave;  //modificar lo de abajo
 	private Privilegio privilegio;
 
 	public int getIdLogin() {

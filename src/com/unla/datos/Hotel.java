@@ -5,15 +5,18 @@ import java.util.List;
 
 public class Hotel {
 	private static Hotel instanciaHotel ;
+	protected int idHotel;
 	protected String cuil;
 	protected String nombre;
-	protected List<Servicio> servicios;
+	//protected List<Servicio> servicios; no va
 	protected int categoria;
 	protected Contacto contacto;
 	protected String checkIn;
 	protected String checkOut;
 	protected Direccion direccion;
 
+	//modificar abajo
+	
 	protected Hotel() {
 		this.inicializar();
 	}

@@ -10,7 +10,7 @@ public class Factura {
 	private List<ItemFactura> items;
 	private GregorianCalendar fechaEmision;
 	private Empleado recepcionista;
-	private long monto;
+	//private long monto;
 	
 	
 	public int getIdFactura() {

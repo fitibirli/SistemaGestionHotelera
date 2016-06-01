@@ -3,10 +3,10 @@ package com.unla.datos;
 public class Contacto {
 	
 	private int idContacto;
-	private long telefono;
-	private long celular;
+	private String telefono;
+	private String celular;
 	private String email;
-	
+	//modificar lo de abajo
 	public Contacto() {
 	}
 	

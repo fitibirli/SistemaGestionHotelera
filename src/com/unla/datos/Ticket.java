@@ -7,7 +7,8 @@ public class Ticket {
 	private TicketTipo tipoTicket;
 	private Factura factura;
 	private Servicio servicio;
-
+	private Estadia estadia;
+//modificar
 	public int getIdTicket() {
 		return idTicket;
 	}

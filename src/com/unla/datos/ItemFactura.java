@@ -2,9 +2,11 @@ package com.unla.datos;
 
 public class ItemFactura {
 
-	private int idItem;
+	private int idItemFactura;
 	private int cantidad;
 	private String descripcion;
+	private double precioUnitario;
+	//modificar lo de abajo
 
 	public int getIdItem() {
 		return idItem;
