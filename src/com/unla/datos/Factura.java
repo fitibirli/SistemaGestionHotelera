@@ -54,9 +54,6 @@ public class Factura {
 	public void setRecepcionista(Empleado recepcionista) {
 		this.recepcionista = recepcionista;
 	}
-
-	
-	
 	
 
 }

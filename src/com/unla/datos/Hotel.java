@@ -11,7 +11,6 @@ public class Hotel {
 	protected String checkOut;
 	protected Direccion direccion;
 
-	//Singleton
 	
 	protected Hotel() {
 		this.inicializar();

@@ -7,6 +7,7 @@ public class ItemFactura {
 	private String descripcion;
 	private double precioUnitario;
 
+	
 	public ItemFactura(){
 	}
 

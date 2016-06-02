@@ -18,6 +18,7 @@ public class Contacto {
 		this.email = email;
 	}
 
+	
 	public int getIdContacto() {
 		return idContacto;
 	}
