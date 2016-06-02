@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import com.unla.dao.ClienteDao;
 import com.unla.dao.EstadiaDao;
