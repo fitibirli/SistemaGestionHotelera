@@ -1,21 +1,17 @@
 package com.unla.datos;
 
-import java.util.GregorianCalendar;
-import java.util.List;
-
 public class Hotel {
 	private static Hotel instanciaHotel ;
 	protected int idHotel;
 	protected String cuil;
 	protected String nombre;
-	//protected List<Servicio> servicios; no va
 	protected int categoria;
 	protected Contacto contacto;
 	protected String checkIn;
 	protected String checkOut;
 	protected Direccion direccion;
 
-	//modificar abajo
+	//Singleton
 	
 	protected Hotel() {
 		this.inicializar();
@@ -26,6 +22,15 @@ public class Hotel {
 			instanciaHotel = new Hotel();
 		}
 		return instanciaHotel;
+	}
+	
+
+	public int getIdHotel() {
+		return idHotel;
+	}
+
+	public void setIdHotel(int idHotel) {
+		this.idHotel = idHotel;
 	}
 
 	public void setCuil(String cuil) {
@@ -46,7 +51,11 @@ public class Hotel {
 	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}
-
+	
+	public int getCategoria() {
+		return categoria;
+	}
+	
 	public Direccion getDireccion() {
 		return direccion;
 	}
@@ -72,12 +81,6 @@ public class Hotel {
 		this.checkOut = checkOut;
 	}
 	private void inicializar() { // pueden leer la instancia de un archivo xml
-		this.setCuil("23-36771843-9");
-		this.setNombre("SistemaGestionHotelera");
-		this.setCategoria(3);
-		this.setContacto(new Contacto(42303233,1567892345,"gestionhotelera@sistgestionhotelera.com"));
-		this.setCheckIn("10:30");
-		this.setCheckOut("23:30");
-		this.setDireccion(new Direccion("ituzaingo",3168,"C1824H"));
+		/*settear el singleton Hotel con los datos de la base*/
 	}
 }

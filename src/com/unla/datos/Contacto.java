@@ -6,11 +6,12 @@ public class Contacto {
 	private String telefono;
 	private String celular;
 	private String email;
-	//modificar lo de abajo
+	
+	
 	public Contacto() {
 	}
 	
-	public Contacto(long telefono, long celular, String email) {
+	public Contacto(String telefono, String celular, String email) {
 		super();
 		this.telefono = telefono;
 		this.celular = celular;
@@ -20,35 +21,33 @@ public class Contacto {
 	public int getIdContacto() {
 		return idContacto;
 	}
-	
+
 	public void setIdContacto(int idContacto) {
 		this.idContacto = idContacto;
 	}
-	
-	public long getTelefono() {
+
+	public String getTelefono() {
 		return telefono;
 	}
-	
-	public void setTelefono(long telefono) {
+
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	
-	public long getCelular() {
+
+	public String getCelular() {
 		return celular;
 	}
-	
-	public void setCelular(long celular) {
+
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	
-	
+	}	
 	
 }

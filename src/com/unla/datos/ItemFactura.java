@@ -6,14 +6,24 @@ public class ItemFactura {
 	private int cantidad;
 	private String descripcion;
 	private double precioUnitario;
-	//modificar lo de abajo
 
-	public int getIdItem() {
-		return idItem;
+	public ItemFactura(){
 	}
 
-	public void setIdItem(int idItem) {
-		this.idItem = idItem;
+	public ItemFactura(int idItemFactura, int cantidad, String descripcion, double precioUnitario) {
+		super();
+		this.idItemFactura = idItemFactura;
+		this.cantidad = cantidad;
+		this.descripcion = descripcion;
+		this.precioUnitario = precioUnitario;
+	}
+
+	public int getIdItemFactura() {
+		return idItemFactura;
+	}
+
+	public void setIdItemFactura(int idItemFactura) {
+		this.idItemFactura = idItemFactura;
 	}
 
 	public int getCantidad() {
@@ -32,4 +42,14 @@ public class ItemFactura {
 		this.descripcion = descripcion;
 	}
 
+	public double getPrecioUnitario() {
+		return precioUnitario;
+	}
+
+	public void setPrecioUnitario(double precioUnitario) {
+		this.precioUnitario = precioUnitario;
+	}
+
+	
+	
 }

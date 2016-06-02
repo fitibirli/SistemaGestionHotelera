@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import com.unla.dao.ClienteDao;
 import com.unla.dao.EstadiaDao;
@@ -37,7 +36,7 @@ public class ClienteABM {
 		Privilegio privilegio=new Privilegio();
 		
 		login.setUsuario(usuario);
-		login.setContrasenia(contrasenia);
+		login.setClave(contrasenia);
 		//privilegio.setDescripcion(descripcion);
 		
 		login.setPrivilegio(privilegio);
@@ -101,7 +100,7 @@ public class ClienteABM {
 		dao.actualizar(c);
 	}
 	
-	public void modificarDatos(Cliente c, String nombre, String apellido, long telefono, long celular, String email, String calle, int numero, String codigoPostal)
+	public void modificarDatos(Cliente c, String nombre, String apellido, String telefono, String celular, String email, String calle, int numero, String codigoPostal)
 	{
 		Contacto cc = new Contacto(telefono, celular, email);
 		Direccion dc = new Direccion(calle, numero, codigoPostal);

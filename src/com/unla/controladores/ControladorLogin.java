@@ -28,7 +28,7 @@ public class ControladorLogin extends HttpServlet {
 		Cliente cliente = loginABM.validarCliente(usuario, contrasenia);
 		
 		request.setAttribute("usuario", cliente.getLogin().getUsuario());
-		request.setAttribute("contrasenia", cliente.getLogin().getContrasenia());
+		request.setAttribute("contrasenia", cliente.getLogin().getClave());
 
 		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
 
@@ -49,7 +49,7 @@ public class ControladorLogin extends HttpServlet {
 		Cliente cliente = loginABM.validarCliente(usuario, contrasenia);
 		
 		request.setAttribute("usuario", cliente.getLogin().getUsuario());
-		request.setAttribute("contrasenia", cliente.getLogin().getContrasenia());
+		request.setAttribute("contrasenia", cliente.getLogin().getClave());
 		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
 
 		} catch (Exception e) {

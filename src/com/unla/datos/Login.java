@@ -4,8 +4,19 @@ public class Login {
 
 	private int idLogin;
 	private String usuario;
-	private String clave;  //modificar lo de abajo
+	private String clave; 
 	private Privilegio privilegio;
+	
+	public Login(){
+	}
+
+	public Login(int idLogin, String usuario, String clave, Privilegio privilegio) {
+		super();
+		this.idLogin = idLogin;
+		this.usuario = usuario;
+		this.clave = clave;
+		this.privilegio = privilegio;
+	}
 
 	public int getIdLogin() {
 		return idLogin;
@@ -23,12 +34,12 @@ public class Login {
 		this.usuario = usuario;
 	}
 
-	public String getContrasenia() {
-		return contrasenia;
+	public String getClave() {
+		return clave;
 	}
 
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
 
 	public Privilegio getPrivilegio() {

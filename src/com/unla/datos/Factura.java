@@ -10,8 +10,19 @@ public class Factura {
 	private List<ItemFactura> items;
 	private GregorianCalendar fechaEmision;
 	private Empleado recepcionista;
-	//private long monto;
 	
+	public Factura(){
+	}
+	
+	public Factura(int idFactura, Cliente cliente, List<ItemFactura> items, GregorianCalendar fechaEmision,
+			Empleado recepcionista) {
+		super();
+		this.idFactura = idFactura;
+		this.cliente = cliente;
+		this.items = items;
+		this.fechaEmision = fechaEmision;
+		this.recepcionista = recepcionista;
+	}
 	
 	public int getIdFactura() {
 		return idFactura;
@@ -43,12 +54,7 @@ public class Factura {
 	public void setRecepcionista(Empleado recepcionista) {
 		this.recepcionista = recepcionista;
 	}
-	public long getMonto() {
-		return monto;
-	}
-	public void setMonto(long monto) {
-		this.monto = monto;
-	}
+
 	
 	
 	

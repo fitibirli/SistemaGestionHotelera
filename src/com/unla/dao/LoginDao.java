@@ -29,7 +29,7 @@ public class LoginDao {
 		try {
 			iniciaOperacion();
 			objeto = (Cliente) session.get(Cliente.class, usuario);
-			if(!objeto.getLogin().getContrasenia().equals(contrasenia)){
+			if(!objeto.getLogin().getClave().equals(contrasenia)){
 				objeto = null;
 			}
 		} finally {

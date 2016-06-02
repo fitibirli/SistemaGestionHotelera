@@ -3,56 +3,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <title>Sistema Gestion Hotelera</title>
 </head>
 <body>
 
-<%!Hotel hotel=Hotel.getInstanciaHotel();%>
-<h1>###########<%=hotel.getNombre()%>###########</h1>
-
-	<FORM method="POST" action="/SistemaGestionHotelera/MostrarInicio">
-		Login<BR>
-		<BR>
-		<TABLE border="0">
-			<TR>
-				<TD>Usuario:</TD>
-				<TD><INPUT required name="usuario"></TD>
-			</TR>
-			
-			<TR>
-				<TD>Password:</TD>
-				<TD><INPUT name="contrasenia" required type="password"></TD>
-			</TR>
-					
-			<TR>
-				<TD><INPUT type="submit" name="ingresar" value="Ingresar"></TD>
-			</TR>
-		</TABLE>
-	</FORM>
-<h2>###########<%=hotel.getNombre()%>##########<%=hotel.getContacto().getEmail()%></h2>	
-
-<h3><i>Si no estas registrado, registrate!</i></h3>
-	<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
-	<a href="/SistemaGestionHotelera/jsp/verofertas.jsp">Ver ofertas!</a>
+<div class="im-centered">
+	<form method="POST" action="/SistemaGestionHotelera/MostrarInicio">
+	<div class="row contenedor-titulo text-center">
+		<div class="col-md-4"><span><img class="imagen-unla" src="img/Lanus.jpg"><h1 class="titulo">Bienvenido a Hotel UNLa.:</h1></span></div>
+		<div class="col-md-4"></div>
+		<div class="col-md-4"></div>
+	</div>
+	<div class="row">	
+		<div class="col-md-4"></div>
+		<div class="col-md-4 text-center">
+			<div class="contenedor-login">
+				<p>Usuario:</p><input required name="usuario" type="text"/>
+				<p class="boton-margen-inferior">Contrasena:</p><input name="contrasenia" required type="password"/></p>
+				<p class="boton-margen-inferior"><input class="boton" type="submit" name="ingresar" value="Ingresar"/></p>
+			</div>
+		</div>
+		<div class="col-md-4"></div>		
+	</div>
+	</form>
+	<div class="row registrate">	
+		<div class="col-md-4"></div>
+		<div class="col-md-4" class="contenedor-link-registrate" style="padding-left: 273px;"><a class="link-registrate" href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a></div>
+		<div class="col-md-4"></div>				
+	</div>
+	<div class="row footer">	
+		<div class="col-md-4"></div>
+		<div class="col-md-4 copyright">Copyright @ 2016</div>
+		<div class="col-md-4"></div>				
+	</div>
+</div>
 
 </body>
 </html>
-
-<!--Referencias básicas HTML
-• Formato del párrafo:
-– <P>: Nuevo Párrafo
-– <BR>: Salto de línea
-– <PRE></PRE>: Texto con fuente de ancho fijo
-– <CENTER></CENTER>: Centrar texto
-• Formato del texto:
-– <B></B>: Negrita
-– <I></I>: Itálica
-– <U></U>: Subrayado
-– <SUB></SUB>: Subíndice
-– <SUP></SUP>: Superíndice
-– <H1></H1>…<H6></H6>: Cabeceras
-Listas:
-– <UL></UL>: Sin numerar
-– <OL></OL>: Numerada
-
--->
