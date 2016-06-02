@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.Empleado" table="Empleado">
+	<class name="com.unla.datos.Empleado" table="Empleado">
 		<id column="legajo" name="legajo">
 			<generator class="identity" />
 		</id>
@@ -11,5 +11,21 @@
 		<property column="dni" name="dni" type="long" />
 		<property column="fechaNacimiento" name="fechaNacimiento" type="calendar" />
 		<property column="baja" name="baja" type="boolean" />
+		
+		<set name="reportes" table="reportemantenimiento" order-by="idReporte asc" inverse="true" lazy="true" fetch="select">
+		<key column="idEmpleado" not-null="true" />
+		<one-to-many class="com.unla.datos.ReporteMantenimiento" />
+		</set>
+		
+		<set name="reportes" table="reportelimpieza" order-by="idReporteLimpieza asc" inverse="true" lazy="true" fetch="select">
+		<key column="idEmpleado" not-null="true" />
+		<one-to-many class="com.unla.datos.ReporteLimpieza" />
+		</set>
+		
+		<one-to-one name="login" class="com.unla.datos.Login" ></one-to-one>
+		<one-to-one name="contacto" class="com.unla.datos.Contacto"></one-to-one>
+
+
+
 	</class>
 </hibernate-mapping>

@@ -1,5 +1,7 @@
 package com.unla.datos;
 
+import java.util.Set;
+
 import com.unla.negocio.CuentaCliente;
 
 public class Cliente {
@@ -12,6 +14,8 @@ public class Cliente {
 	private Contacto contacto;
 	private Direccion direccion;
 	private Login login;
+	private Set<Recibo> recibos;
+	private Set<Factura> facturas;
 
 	public Cliente()
 	{	
@@ -99,6 +103,22 @@ public class Cliente {
 	
 	public void setIdCliente(int idCliente) {
 		this.idCliente = idCliente;
+	}
+
+	public Set<Recibo> getRecibos() {
+		return recibos;
+	}
+
+	public void setRecibos(Set<Recibo> recibos) {
+		this.recibos = recibos;
+	}
+	
+	public Set<Factura> getFactura() {
+		return facturas;
+	}
+
+	public void setFacturas(Set<Factura> facturas) {
+		this.facturas = facturas;
 	}
 	
 	

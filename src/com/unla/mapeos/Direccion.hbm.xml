@@ -2,12 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.Direccion" table="Direccion">
+	<class name="com.unla.datos.Direccion" table="Direccion">
 		<id column="idDireccion" name="idDireccion">
-			<generator class="identity" />
+			<generator class="foreign" >
+			<param name="property">cliente</param>
+			<param name="property">hotel</param>
+			</generator>
 		</id>
 		<property column="calle" name="calle" type="string" />
 		<property column="numero" name="numero" type="int" />
 		<property column="codigoPostal" name="codigoPostal" type="string" />
+		<one-to-one name="cliente" class="com.unla.datos.Cliente" ></one-to-one>
+		<one-to-one name="hotel" class="com.unla.datos.Hotel" ></one-to-one>
 	</class>
 </hibernate-mapping>

@@ -2,10 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.EstadoEstadia" table="TipoEstado">
+	<class name="com.unla.datos.EstadoEstadia" table="TipoEstado">
 		<id column="idTipoEstado" name="idTipoEstado">
-			<generator class="identity" />
+			<generator class="foreign" >
+			<param name="property">estadia</param>
+			</generator>
 		</id>
-		<property column="descripcion" name="descripcion" type="string" />
+		<one-to-one name="estadia" class="com.unla.datos.Estadia" ></one-to-one>
 	</class>
 </hibernate-mapping>
