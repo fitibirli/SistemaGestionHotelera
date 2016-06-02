@@ -20,12 +20,36 @@
 		<servlet-name>RegistrarseController</servlet-name>
 		<servlet-class>com.unla.controladores.RegistrarseController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ControllerRegistracion</servlet-name>
+		<servlet-class>com.unla.controladores.ControllerRegistracion</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ControladorIndex</servlet-name>
+		<servlet-class>com.unla.controladores.ControladorIndex</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ControladorReservas</servlet-name>
+		<servlet-class>com.unla.controladores.ControladorReservas</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ControladorLogin</servlet-name>
 		<url-pattern>/MostrarInicio</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+		<servlet-name>ControladorIndex</servlet-name>
+		<url-pattern>/Index</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ControladorReservas</servlet-name>
+		<url-pattern>/Reservas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>RegistrarseController</servlet-name>
 		<url-pattern>/Registrarse</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ControllerRegistracion</servlet-name>
+		<url-pattern>/FormularioRegistro</url-pattern>
 	</servlet-mapping>
 </web-app>

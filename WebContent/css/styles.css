@@ -15,6 +15,15 @@
     font-size: 16px;
 }
 
+.boton-registrar{
+    background-color: rgb(95, 63, 61);
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    font-size: 16px;
+    width:167px;
+}
+
 input:focus {
     border: 3px solid #555;
     width: 207px;
@@ -59,7 +68,7 @@ input{
 }
 
 .contenedor-link-registrate{
-	    padding-left: 280px;
+	    padding-left: 255px;
 }
 
 .contenedor-titulo{
@@ -82,3 +91,20 @@ input{
 .copyright{
 	    margin-left: 268px;
 }
+
+nav{
+	padding-top:96px;
+}
+.horizontal-menu {
+  box-sizing: border-box; }
+  .horizontal-menu__lista {
+    padding: 0;
+    margin: 10px 0; }
+  .horizontal-menu__item {
+    display: inline;
+    margin-right: 40px; }
+    .horizontal-menu__item a {
+      color: #ffffff; }
+    .horizontal-menu__item a:hover {
+      border-bottom: 1px solid #ffffff; }
+
