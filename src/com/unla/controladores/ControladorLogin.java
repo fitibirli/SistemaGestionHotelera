@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.unla.datos.Cliente;
 import com.unla.datos.Empleado;
 import com.unla.datos.Hotel;
+import com.unla.negocio.Facade;
 import com.unla.negocio.LoginABM;
 public class ControladorLogin extends HttpServlet {
 	Hotel hotel=Hotel.getInstanciaHotel();		
@@ -19,8 +20,10 @@ public class ControladorLogin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		
+		Facade facade = Facade.getInstance();
+		
 		try {
-		LoginABM loginABM = new LoginABM();
+		LoginABM loginABM = facade.getLoginABM();
 
 		String usuario = request.getParameter("usuario");
 		String contrasenia = request.getParameter("clave");
@@ -41,8 +44,11 @@ public class ControladorLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		
+		Facade facade = Facade.getInstance();
+		
 		try {
-		LoginABM loginABM = new LoginABM();
+			
+		LoginABM loginABM = facade.getLoginABM();
 		String usuario = request.getParameter("usuario");
 		String contrasenia = request.getParameter("clave");
 				
