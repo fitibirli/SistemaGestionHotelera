@@ -24,7 +24,7 @@
     width:167px;
 }
 
-input:focus {
+.input-ingresar:focus {
     border: 3px solid #555;
     width: 207px;
     height: 39px;
@@ -107,4 +107,29 @@ nav{
       color: #ffffff; }
     .horizontal-menu__item a:hover {
       border-bottom: 1px solid #ffffff; }
+      
+      
+.contenedor-registro{
+	width:207px;
+	margin:auto;
+}
 
+.footer-pagina {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 20em;
+}
+
+
+.input-registro{
+	
+	margin-top:19px;
+}
+
+
+.texto-normal{
+	
+	font-size:large;
+}

@@ -7,10 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="row footer">	
+<!--  -->
+	 <div class="row footer">	
 		<div class="col-md-4"></div>
 		<div class="col-md-4 copyright">Copyright @ 2016</div>
 		<div class="col-md-4"></div>				
-	</div>
+	</div> 
+	
+
 </body>
 </html>

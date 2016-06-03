@@ -21,9 +21,9 @@
 		<div class="col-md-4"></div>
 		<div class="col-md-4 text-center">
 			<div class="contenedor-login">
-				<p>Usuario:</p><input required name="usuario" type="text"/>
-				<p class="boton-margen-inferior">Contrasena:</p><input name="contrasenia" required type="password"/></p>
-				<p class="boton-margen-inferior"><input class="boton" type="submit" name="ingresar" value="Ingresar"/></p>
+				<p class="texto-normal">Usuario:</p><input class="input-ingresar" required name="usuario" type="text"/>
+				<p class="boton-margen-inferior texto-normal">Contrasena:</p><input class="input-ingresar" name="contrasenia" required type="password"/></p>
+				<p class="boton-margen-inferior"><input class="boton input-ingresar" type="submit" name="ingresar" value="Ingresar"/></p>
 			</div>
 		</div>
 		<div class="col-md-4"></div>		

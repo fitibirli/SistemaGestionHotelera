@@ -3,9 +3,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bienvendido, Sistema Gestion Hotelera:</title>
+<title>Error inesperado</title>
 </head>
 <body>
+	<%@include file="header.jsp" %>
 	ERROR AL AUTENTICAR
+	<%@include file="footer.jsp" %>
 </body>
 </html>

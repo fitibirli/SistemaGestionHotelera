@@ -24,7 +24,8 @@
 		<div class="col-md-4">
 			  <nav class="horizontal-menu-right">
               <ul class="horizontal-menu__lista">
-                  <li class="horizontal-menu__item"><a href="Index">INICIO</a></li>
+                  <li class="horizontal-menu__item"><a href="Inicio">INICIO</a></li>
+                  <li class="horizontal-menu__item"><a href="Index">INGRESAR</a></li>
                   <li class="horizontal-menu__item"><a href="Reservas">RESERVAS</a></li>
                   <li class="horizontal-menu__item"><a href="Ofertas">OFERTAS</a></li>
                   <li class="horizontal-menu__item"><a href="Contacto">CONTACTO</a></li>
