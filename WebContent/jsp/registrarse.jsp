@@ -11,19 +11,27 @@
 <body>
 	<header><%@include file="header.jsp" %></header>
 	<section>
-		<form method="POST" action="/SistemaGestionHotelera/Registrarse">
-			<div><CENTER>
-				<BR>Nombre: <input type="text" name="nombre" />
-				<BR>Apellido: <input type="text" name="apellido"/>
-				<BR>Dni: <input type="text" name="dni" />
-				<BR>Fecha de nacimiento: <input type="date" name="fechaNacimiento" />	
-				<BR>Usuario: <input type="text" name="usuario" />
-				<BR>Contraseña: <input type="password" name="contrasenia" />
-				<BR>Mail: <input type="text" name="mail" />
-				</CENTER>
-			<input type="submit" value="Enviar"/>
+		
+	<div class="row">	
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div>
+				<form method="POST" action="/SistemaGestionHotelera/Registrarse">
+						<div>Nombre:</div> <div><input type="text" name="nombre" /></div>
+						<div>Apellido:</div> <div><input type="text" name="apellido"/></div>
+						<div>Dni:</div> <div><input type="text" name="dni" /></div>
+						<div>Fecha de nacimiento:</div> <div><input type="date" name="fechaNacimiento" /></div>	
+						<div>Usuario:</div> <div><input type="text" name="usuario" /></div>
+						<div>Contraseña:</div> <div><input type="password" name="contrasenia" /></div>
+						<div>Mail:</div> <div><input type="text" name="mail" /></div>
+					<input type="submit" value="Enviar"/>
+				</form>
 			</div>
-		</form>
+		</div>
+		<div class="col-md-4"></div>				
+	</div>
+				
+		
 	</section>
 	<footer></footer>
  <%@include file="footer.jsp" %>
