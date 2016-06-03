@@ -2,12 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.Servicio" table="Servicio">
-		<id column="idServicio" name="idServicio">
+	<class name="com.unla.datos.Habitacion" table="Habitacion">
+		<id column="idHabitacion" name="idHabitacion">
 			<generator class="identity" />
 		</id>
-		<property column="nombre" name="nombre" type="string" />
-		<property column="descripcion" name="descripcion" type="string" />
+		<property column="capacidadMaxima" name="capacidadMaxima" type="int" />
+		<property column="disponible" name="disponible" type="boolean" />
 		<property column="precio" name="precio" type="double" />
 	</class>
 </hibernate-mapping>
+

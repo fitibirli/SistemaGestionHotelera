@@ -2,11 +2,10 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.FormaDePago" table="FormaDePago">
-		<id column="idFormaDePago" name="idFormaDePago">
+	<class name="com.unla.datos.datos.TicketTipo" table="TicketTipo">
+		<id column="idTicketTipo" name="idTicketTipo">
 			<generator class="identity" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
 	</class>
 </hibernate-mapping>
-

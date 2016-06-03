@@ -1,6 +1,7 @@
 package com.unla.datos;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class Empleado {
 	
@@ -12,6 +13,8 @@ public class Empleado {
 	 private Contacto contacto;
 	 private GregorianCalendar fechaNacimiento;
 	 private Login login;
+	 private List<ReporteLimpieza> reportesDeLimpieza;
+	 private List<ReporteMantenimiento> reportesDeMantenimiento;
 	 
 	 
 	public int getLegajo() {
@@ -61,6 +64,18 @@ public class Empleado {
 	}
 	public void setLogin(Login login) {
 		this.login = login;
+	}
+	public List<ReporteLimpieza> getReportesDeLimpieza() {
+		return reportesDeLimpieza;
+	}
+	public void setReportesDeLimpieza(List<ReporteLimpieza> reportesDeLimpieza) {
+		this.reportesDeLimpieza = reportesDeLimpieza;
+	}
+	public List<ReporteMantenimiento> getReportesDeMantenimiento() {
+		return reportesDeMantenimiento;
+	}
+	public void setReportesDeMantenimiento(List<ReporteMantenimiento> reportesDeMantenimiento) {
+		this.reportesDeMantenimiento = reportesDeMantenimiento;
 	}
 	 
 	 

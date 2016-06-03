@@ -7,33 +7,42 @@
   <title>Las mejores ofertas</title>
 </head>  
 <body>  
-  <h1>Reservas disponibles</h1>
-  <FORM method="POST" action="/SistemaGestionHotelera/Reserva">
-  		<TABLE border="0">
-			<TR>
-				<TD>Tipo:PREMIUN</TD>
-				<TD>Para 2 personas</TD>
-				<TD>Precio por día:$1500</TD>
-				<TD><INPUT type="submit" name="reservar" value="reservar"></TD>
-				
-			</TR>
+ <%@include file="header.jsp" %>
+  
+   <form method="POST" action="/SistemaGestionHotelera/Reserva">
+  	<div class="row">	
+		<div class="col-md-4"></div>
+		<div class="col-md-4"><h1 style="text-align:center">Reservas disponibles</h1>
+			<article class="oferta">
+				<div style="text-align:center">Tipo: PREMIUM</div>
+				<div style="text-align:center">Para 2 personas</div>
+				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
+			</article>
+			<article class="oferta">
+				<div style="text-align:center">Tipo: PREMIUM</div>
+				<div style="text-align:center">Para 2 personas</div>
+				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
+			</article>
+			<article class="oferta">
+				<div style="text-align:center">Tipo: PREMIUM</div>
+				<div style="text-align:center">Para 2 personas</div>
+				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
+			</article>
+			<article class="oferta">
+				<div style="text-align:center">Tipo: PREMIUM</div>
+				<div style="text-align:center">Para 2 personas</div>
+				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
+			</article>
+		</div>
+		<div class="col-md-4"></div>				
+	</div>
+	 </form>
 
-			<TR>
-				<TD>Tipo:SUIT</TD>
-				<TD>Para 4 personas</TD>
-				<TD>Precio por día:$1000</TD>
-				<TD><INPUT type="submit" name="reservar" value="reservar"></TD>
-			</TR>
-			<TR>
-				<TD>Tipo:BASE</TD>
-				<TD>Para 2 personas</TD>
-				<TD>Precio por día:$800</TD>
-				<TD><INPUT type="submit" name="reservar" value="reservar"></TD>
-				
-			</TR>
-		</TABLE>
-	</FORM>		
-		<a href="/SistemaGestionHotelera/jsp/registrarse.jsp">Registrate aqui.</a>
-		<a href="https://www.youtube.com/watch?v=YWKWD9jDZNU">u2</a>
+		
+		 <%@include file="footer.jsp" %>
 </body>  
 </html>  

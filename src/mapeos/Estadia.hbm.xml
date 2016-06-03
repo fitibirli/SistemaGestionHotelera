@@ -4,18 +4,19 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.Estadia" table="Estadia">
 		<id column="idEstadia" name="idEstadia">
-			<generator class="foreign" >
-			<param name="property">cliente</param>
+			<generator class="foreign">
+				<param name="property">cliente</param>
 			</generator>
 		</id>
 		<property column="fechaIngreso" name="fechaIngreso" type="calendar" />
 		<property column="fechaSalida" name="fechaSalida" type="calendar" />
-		<set name="tickets" table="ticket" order-by="idTicket asc" inverse="true" lazy="true" fetch="select">
-		<key column="idEstadia" not-null="true" />
-		<one-to-many class="com.unla.datos.Factura" />
+		<set name="tickets" table="ticket" order-by="idTicket asc"
+			inverse="true" lazy="true" fetch="select">
+			<key column="idEstadia" not-null="true" />
+			<one-to-many class="com.unla.datos.Factura" />
 		</set>
-		<one-to-one name="estadoEstadia" class="com.unla.datos.EstadoEstadia" ></one-to-one>
-		<one-to-one name="cliente" class="com.unla.datos.Cliente" ></one-to-one>
+		<one-to-one name="estadoEstadia" class="com.unla.datos.EstadoEstadia"></one-to-one>
+		<one-to-one name="cliente" class="com.unla.datos.Cliente"></one-to-one>
 	</class>
 </hibernate-mapping>
 

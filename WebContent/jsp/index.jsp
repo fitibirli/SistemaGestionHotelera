@@ -22,7 +22,7 @@
 		<div class="col-md-4 text-center">
 			<div class="contenedor-login">
 				<p class="texto-normal">Usuario:</p><input class="input-ingresar" required name="usuario" type="text"/>
-				<p class="boton-margen-inferior texto-normal">Contrasena:</p><input class="input-ingresar" name="contrasenia" required type="password"/></p>
+				<p class="boton-margen-inferior texto-normal">Contrasena:</p><input class="input-ingresar" name="clave" required type="password"/></p>
 				<p class="boton-margen-inferior"><input class="boton input-ingresar" type="submit" name="ingresar" value="Ingresar"/></p>
 			</div>
 		</div>

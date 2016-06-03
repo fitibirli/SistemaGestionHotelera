@@ -8,21 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ControladorInicio
+ * Servlet implementation class ControladorContacto
  */
 
-
-public class ControladorInicio extends HttpServlet {
+public class ControladorContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ControladorInicio() {
+    public ControladorContacto() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsp/formulariocontacto.jsp").forward(request, response);
 	}
 
 

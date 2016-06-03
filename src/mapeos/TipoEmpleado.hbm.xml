@@ -2,8 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.TipoHabitacion" table="TipoHabitacion">
-		<id column="idTipoHabitacion" name="idTipoHabitacion">
+	<class name="com.unla.datos.TipoEmpleado" table="TipoEmpleado">
+		<id column="idTipoEmpleado" name="idTipoEmpleado">
 			<generator class="identity" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />

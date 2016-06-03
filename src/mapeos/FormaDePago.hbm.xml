@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="datos.Recibo" table="Recibo">
-		<id column="idRecibo" name="idRecibo">
+	<class name="com.unla.datos.FormaDePago" table="FormaDePago">
+		<id column="idFormaDePago" name="idFormaDePago">
 			<generator class="identity" />
 		</id>
-		<property column="fecha" name="fecha" type="calendar" />
-		<property column="importe" name="importe" type="double" />
+		<property column="descripcion" name="descripcion" type="string" />
 	</class>
 </hibernate-mapping>
+

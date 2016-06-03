@@ -20,9 +20,8 @@
 						<div class="input-registro"><p class="texto-normal">Nombre:</p></div> <div><input type="text" name="nombre" /></div>
 						<div class="input-registro"><p class="texto-normal">Apellido:</p></div> <div><input type="text" name="apellido"/></div>
 						<div class="input-registro"><p class="texto-normal">Mail:</p></div> <div><input type="text" name="mail" /></div>
-						<textarea rows="10" cols="50">
-						Por favor dejanos tu consulta aqui, te responderemos a la brevedad.
-						</textarea>
+						<div style="margin-top:20px;"><textarea rows="10" cols="50">Por favor dejanos tu consulta aqui, te responderemos a la brevedad.
+						</textarea></div>
 						<div class="input-registro"><input class="boton" type="submit" value="Enviar consulta"/></div>
 				</form>
 			</div>

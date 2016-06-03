@@ -17,7 +17,7 @@
     <servlet-name>ControladorInicio</servlet-name>
     <servlet-class>com.unla.controladores.ControladorInicio</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <servlet-name>ControladorOfertas</servlet-name>
     <servlet-class>com.unla.controladores.ControladorOfertas</servlet-class>
   </servlet>
@@ -36,6 +36,10 @@
   <servlet>
     <servlet-name>ControladorReservas</servlet-name>
     <servlet-class>com.unla.controladores.ControladorReservas</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>ControladorContacto</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorContacto</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ControladorLogin</servlet-name>
@@ -61,8 +65,13 @@
     <servlet-name>ControladorInicio</servlet-name>
     <url-pattern>/Inicio</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ControladorOfertas</servlet-name>
     <url-pattern>/Ofertas</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ControladorContacto</servlet-name>
+    <url-pattern>/Contacto</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -9,12 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.unla.datos.Cliente;
 import com.unla.excepciones.YaExisteClienteException;
 import com.unla.negocio.ClienteABM;
-import com.unla.negocio.LoginABM;
-
-import funciones.Funciones;
 
 public class RegistrarseController extends HttpServlet {
 

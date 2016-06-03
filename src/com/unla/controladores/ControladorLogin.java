@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.unla.datos.Cliente;
+import com.unla.datos.Empleado;
 import com.unla.datos.Hotel;
-import com.unla.datos.Login;
 import com.unla.negocio.LoginABM;
 public class ControladorLogin extends HttpServlet {
 	Hotel hotel=Hotel.getInstanciaHotel();		
@@ -48,10 +48,15 @@ public class ControladorLogin extends HttpServlet {
 				
 		Cliente cliente = loginABM.validarCliente(usuario, contrasenia);
 		
-		request.setAttribute("usuario", cliente.getLogin().getUsuario());
-		request.setAttribute("contrasenia", cliente.getLogin().getClave());
-		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
-
+		if(cliente != null){
+			request.setAttribute("usuario", cliente.getLogin().getUsuario());
+			request.setAttribute("contrasenia", cliente.getLogin().getClave());
+			request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
+		}else{
+			
+			Empleado empleado = loginABM.validarEmpleado(usuario, contrasenia);
+			
+		}
 		} catch (Exception e) {
 			request.getRequestDispatcher("/jsp/errorlogin.jsp").forward(request, response);;
 			
