@@ -1,7 +1,6 @@
 package com.unla.datos;
-import com.unla.datos.Cliente;
 
-public class Reservada extends EstadoEstadia{
+public class EstadoConfirmada extends EstadoEstadia{
 
 	@Override
 	public EstadoEstadia reservar(Cliente cliente) {
@@ -32,8 +31,5 @@ public class Reservada extends EstadoEstadia{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-	
 
 }

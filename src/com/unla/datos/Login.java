@@ -50,4 +50,5 @@ public class Login {
 		this.privilegio = privilegio;
 	}
 
+	
 }

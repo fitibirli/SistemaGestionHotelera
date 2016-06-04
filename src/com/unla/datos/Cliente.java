@@ -121,6 +121,9 @@ public class Cliente {
 		this.facturas = facturas;
 	}
 	
+	public Set<Factura> getFacturas() {
+		return facturas;
+	}
 	
 
 }

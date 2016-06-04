@@ -2,12 +2,22 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.unla.datos.EstadoEstadia" table="estadoestadia">
-		<id column="idEstadoEstadia" name="idEstadoEstadia">
-			<generator class="foreign" >
-				<param name="property">estadia</param>
-			</generator>
+	<class name="com.unla.datos.EstadoEstadia" table="estadoestadia"
+		polymorphism="implicit">
+		<cache usage="read-only" />
+		<id name="idEstadoEstadia" column="idEstadoEstadia">
+			<generator class="assigned" />
 		</id>
-		<one-to-one name="estadia" class="com.unla.datos.Estadia" ></one-to-one>
+		<discriminator insert="false" column="idEstadoEstadia" />
+		<!-- <property name="nombre" column="nombre" /> -->
+		<subclass name="com.unla.datos.EstadoReservada"
+			discriminator-value="0" />
+		<subclass name="com.unla.datos.EstadoEnCurso"
+			discriminator-value="1" />
+		<subclass name="com.unla.datos.EstadoConfirmada"
+			discriminator-value="2" />
+		<subclass name="com.unla.datos.EstadoTerminada"
+			discriminator-value="3" />
+
 	</class>
 </hibernate-mapping>

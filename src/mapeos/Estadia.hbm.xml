@@ -15,7 +15,10 @@
 			<key column="idEstadia" not-null="true" />
 			<one-to-many class="com.unla.datos.Factura" />
 		</set>
-		<one-to-one name="estadoEstadia" class="com.unla.datos.EstadoEstadia"></one-to-one>
+		<many-to-one
+        name="estado" column="idEstadoEstadia" outer-join="false" lazy="false" not-found="ignore"
+        class="com.unla.datos.EstadoEstadia" >
+    </many-to-one>
 		<one-to-one name="cliente" class="com.unla.datos.Cliente"></one-to-one>
 	</class>
 </hibernate-mapping>

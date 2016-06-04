@@ -1,6 +1,6 @@
 package com.unla.datos;
 
-public class Terminada extends EstadoEstadia {
+public class EstadoTerminada extends EstadoEstadia {
 
 	@Override
 	public EstadoEstadia reservar(Cliente cliente) {

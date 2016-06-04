@@ -2,15 +2,15 @@ package com.unla.datos;
 
 public class TicketTipo {
 
-	private int idTicketTipo;
+	private int idTipoTicket;
 	private String descripcion;
 
 	public int getIdTicketTipo() {
-		return idTicketTipo;
+		return idTipoTicket;
 	}
 
 	public void setIdTicketTipo(int idTicketTipo) {
-		this.idTicketTipo = idTicketTipo;
+		this.idTipoTicket = idTicketTipo;
 	}
 
 	public String getDescripcion() {

@@ -49,4 +49,12 @@ public class Ticket {
 		this.servicio = servicio;
 	}
 
+	public Estadia getEstadia() {
+		return estadia;
+	}
+
+	public void setEstadia(Estadia estadia) {
+		this.estadia = estadia;
+	}
+
 }

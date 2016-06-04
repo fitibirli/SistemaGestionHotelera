@@ -2,11 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.unla.datos.ItemFactura" table="ItemFactura">
-		<id column="idItem" name="idItem">
+	<class name="com.unla.datos.ItemFactura" table="itemfactura">
+		<id column="idItemFactura" name="idItemFactura">
 			<generator class="identity" />
 		</id>
 		<property column="cantidad" name="cantidad" type="int" />
 		<property column="descripcion" name="descripcion" type="string" />
+		<property column="precioUnitario" name="precioUnitario" type="double" />
 	</class>
 </hibernate-mapping>
