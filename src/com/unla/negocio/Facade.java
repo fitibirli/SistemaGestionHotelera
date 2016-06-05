@@ -4,11 +4,13 @@ public class Facade {
 	
 	private ClienteABM clienteABM = new ClienteABM();
 	private LoginABM loginABM = new LoginABM();
+	private EstadiaABM estadiaABM = new EstadiaABM();
 	private static Facade instanciaFacade;
 	
 	protected Facade() {
 		clienteABM = new ClienteABM();
 		loginABM = new LoginABM();
+		estadiaABM = new EstadiaABM();
 	}
 
 	public static Facade getInstance() {
@@ -24,6 +26,10 @@ public class Facade {
 	
 	public LoginABM getLoginABM() {
 		return loginABM;
+	}
+
+	public EstadiaABM getEstadiaABM() {
+		return estadiaABM;
 	}
 
 	
