@@ -1,13 +1,16 @@
 package com.unla.datos;
 
+import com.unla.datos.TipoTicket;
+
 public class Ticket {
 
 	private int idTicket;
 	private Empleado empleado;
-	private TicketTipo tipoTicket;
+	private TipoTicket tipoTicket;
 	private Factura factura;
-	private Servicio servicio;
+	//private Servicio servicio;
 	private Estadia estadia;
+	private String descripcion;
 //modificar
 	public int getIdTicket() {
 		return idTicket;
@@ -17,19 +20,11 @@ public class Ticket {
 		this.idTicket = idTicket;
 	}
 
-	public Empleado getEmpleado() {
-		return empleado;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
-	}
-
-	public TicketTipo getTipoTicket() {
+	public TipoTicket getTipoTicket() {
 		return tipoTicket;
 	}
 
-	public void setTipoTicket(TicketTipo tipoTicket) {
+	public void setTipoTicket(TipoTicket tipoTicket) {
 		this.tipoTicket = tipoTicket;
 	}
 
@@ -41,14 +36,6 @@ public class Ticket {
 		this.factura = factura;
 	}
 
-	public Servicio getServicio() {
-		return servicio;
-	}
-
-	public void setServicio(Servicio servicio) {
-		this.servicio = servicio;
-	}
-
 	public Estadia getEstadia() {
 		return estadia;
 	}
@@ -57,4 +44,22 @@ public class Ticket {
 		this.estadia = estadia;
 	}
 
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	
+	
 }

@@ -4,7 +4,7 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.EstadoEstadia" table="estadoestadia"
 		polymorphism="implicit">
-		<cache usage="read-only" />
+		<!--<cache usage="read-only" />  -->
 		<id name="idEstadoEstadia" column="idEstadoEstadia">
 			<generator class="assigned" />
 		</id>
@@ -18,6 +18,5 @@
 			discriminator-value="2" />
 		<subclass name="com.unla.datos.EstadoTerminada"
 			discriminator-value="3" />
-
 	</class>
 </hibernate-mapping>
