@@ -6,6 +6,15 @@
 <title>Bienvendido, Sistema Gestion Hotelera:</title>
 </head>
 <body>
-	Bienvenido Usuario:  <!--request.getAttribute("usuario")-->
+ <%@include file="header.jsp" %>
+	<h1>Bienvenido Usuario:  <%=request.getAttribute("usuario")%></h1>
+	
+	<h2>Que desea realizar?:</h2>
+	
+	<div>
+	Reserva:
+	Modificar Datos:
+	</div>
+	 <%@include file="footer.jsp" %>
 </body>
 </html>

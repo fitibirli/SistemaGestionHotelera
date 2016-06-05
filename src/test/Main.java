@@ -17,9 +17,9 @@ public class Main {
 		LoginABM la = Facade.getInstance().getLoginABM();
 		
 		try {
-			Cliente cliente = la.validarCliente("asdasd", "adasd");
+			Cliente cliente = la.validarCliente("fito", "fito");
 			
-			System.out.println(cliente.getLogin().getPrivilegio());
+			System.out.println(cliente.getNombre());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

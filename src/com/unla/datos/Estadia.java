@@ -13,6 +13,8 @@ public class Estadia {
 	private EstadoEstadia estado;
 	private List<Ticket> tickets;
 
+	
+
 	public int getIdEstadia() {
 		return idEstadia;
 	}
@@ -53,20 +55,20 @@ public class Estadia {
 		this.fechaSalida = fechaSalida;
 	}
 
-	public List<Ticket> getTickets() {
-		return tickets;
-	}
-
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
-	}
-
 	public EstadoEstadia getEstado() {
 		return estado;
 	}
 
 	public void setEstado(EstadoEstadia estado) {
 		this.estado = estado;
+	}
+
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
 	public void cancelarReserva()

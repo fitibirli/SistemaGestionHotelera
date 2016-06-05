@@ -15,51 +15,40 @@ public class Ticket {
 	public int getIdTicket() {
 		return idTicket;
 	}
-
 	public void setIdTicket(int idTicket) {
 		this.idTicket = idTicket;
 	}
-
-	public TipoTicket getTipoTicket() {
-		return tipoTicket;
-	}
-
-	public void setTipoTicket(TipoTicket tipoTicket) {
-		this.tipoTicket = tipoTicket;
-	}
-
-	public Factura getFactura() {
-		return factura;
-	}
-
-	public void setFactura(Factura factura) {
-		this.factura = factura;
-	}
-
-	public Estadia getEstadia() {
-		return estadia;
-	}
-
-	public void setEstadia(Estadia estadia) {
-		this.estadia = estadia;
-	}
-
 	public Empleado getEmpleado() {
 		return empleado;
 	}
-
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
-
+	public TipoTicket getTipoTicket() {
+		return tipoTicket;
+	}
+	public void setTipoTicket(TipoTicket tipoTicket) {
+		this.tipoTicket = tipoTicket;
+	}
+	public Factura getFactura() {
+		return factura;
+	}
+	public void setFactura(Factura factura) {
+		this.factura = factura;
+	}
+	public Estadia getEstadia() {
+		return estadia;
+	}
+	public void setEstadia(Estadia estadia) {
+		this.estadia = estadia;
+	}
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
+	
 	
 	
 }

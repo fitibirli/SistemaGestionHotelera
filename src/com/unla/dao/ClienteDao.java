@@ -87,15 +87,18 @@ public class ClienteDao {
 		return objeto;
 	}
 	
-	@SuppressWarnings("unchecked")
+	
 	public List<Cliente> traerCliente() throws HibernateException {
-		List<Cliente> lista=null;
+		List lista=null;
 		try {
 			iniciaOperacion();
+			System.out.println(session);
 			lista=session.createQuery("from Cliente c order by c.apellido asc c.nombreasc").list();
+		}catch(Exception e){
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
-		return lista;
+		return (List<Cliente>) lista;
 	}
 }

@@ -18,7 +18,6 @@ public class Contacto {
 		this.email = email;
 	}
 
-	
 	public int getIdContacto() {
 		return idContacto;
 	}
@@ -49,6 +48,8 @@ public class Contacto {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}	
+	}
+
+	
 	
 }

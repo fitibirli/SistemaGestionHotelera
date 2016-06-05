@@ -131,5 +131,12 @@ public class ClienteABM {
 	*/
 	
 	
+	public List<Cliente> traerClientes(){
+		
+		return dao.traerCliente();
+		
+	}
+	
+	
 	
 }

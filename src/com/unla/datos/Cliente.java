@@ -40,7 +40,15 @@ public class Cliente {
 		this.direccion = direccion;
 		this.login = login;
 	}
-	
+
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -48,61 +56,53 @@ public class Cliente {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getApellido() {
 		return apellido;
 	}
-	
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
+
 	public long getDni() {
 		return dni;
 	}
-	
+
 	public void setDni(long dni) {
 		this.dni = dni;
 	}
-	
+
 	public CuentaCliente getCuenta() {
 		return cuenta;
 	}
-	
+
 	public void setCuenta(CuentaCliente cuenta) {
 		this.cuenta = cuenta;
 	}
-	
+
 	public Contacto getContacto() {
 		return contacto;
 	}
-	
+
 	public void setContacto(Contacto contacto) {
 		this.contacto = contacto;
 	}
-	
+
 	public Direccion getDireccion() {
 		return direccion;
 	}
-	
+
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-	
+
 	public Login getLogin() {
 		return login;
 	}
-	
+
 	public void setLogin(Login login) {
 		this.login = login;
-	}
-	
-	public int getIdCliente() {
-		return idCliente;
-	}
-	
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
 	}
 
 	public Set<Recibo> getRecibos() {
@@ -112,8 +112,8 @@ public class Cliente {
 	public void setRecibos(Set<Recibo> recibos) {
 		this.recibos = recibos;
 	}
-	
-	public Set<Factura> getFactura() {
+
+	public Set<Factura> getFacturas() {
 		return facturas;
 	}
 
@@ -121,9 +121,5 @@ public class Cliente {
 		this.facturas = facturas;
 	}
 	
-	public Set<Factura> getFacturas() {
-		return facturas;
-	}
 	
-
 }

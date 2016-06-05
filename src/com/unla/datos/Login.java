@@ -38,8 +38,8 @@ public class Login {
 		return clave;
 	}
 
-	public void setClave(String contrasenia) {
-		this.clave = contrasenia;
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
 
 	public Privilegio getPrivilegio() {

@@ -15,8 +15,6 @@ public class Empleado {
 	 private Login login;
 	 private List<ReporteLimpieza> reportesDeLimpieza;
 	 private List<ReporteMantenimiento> reportesDeMantenimiento;
-	 
-	 
 	public int getLegajo() {
 		return legajo;
 	}
@@ -77,6 +75,8 @@ public class Empleado {
 	public void setReportesDeMantenimiento(List<ReporteMantenimiento> reportesDeMantenimiento) {
 		this.reportesDeMantenimiento = reportesDeMantenimiento;
 	}
+	 
+	 
 	 
 	 
 

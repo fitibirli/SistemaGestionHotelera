@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.unla.datos.ReporteLimpieza" table="ReporteLimpieza">
+	<class name="com.unla.datos.ReporteLimpieza" table="reportelimpieza">
 		<id column="idReporteLimpieza" name="idReporteLimpieza">
 			<generator class="identity" />
 		</id>

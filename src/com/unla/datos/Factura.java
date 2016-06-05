@@ -23,37 +23,47 @@ public class Factura {
 		this.fechaEmision = fechaEmision;
 		this.recepcionista = recepcionista;
 	}
-	
+
 	public int getIdFactura() {
 		return idFactura;
 	}
+
 	public void setIdFactura(int idFactura) {
 		this.idFactura = idFactura;
 	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
+
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
 	public List<ItemFactura> getItems() {
 		return items;
 	}
+
 	public void setItems(List<ItemFactura> items) {
 		this.items = items;
 	}
+
 	public GregorianCalendar getFechaEmision() {
 		return fechaEmision;
 	}
+
 	public void setFechaEmision(GregorianCalendar fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
+
 	public Empleado getRecepcionista() {
 		return recepcionista;
 	}
+
 	public void setRecepcionista(Empleado recepcionista) {
 		this.recepcionista = recepcionista;
 	}
 	
+		
 
 }

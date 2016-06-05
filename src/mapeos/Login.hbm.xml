@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.unla.datos.Login" table="Login">
+	<class name="com.unla.datos.Login" table="login">
 		<id column="idLogin" name="idLogin">
 			<generator class="identity" />
 		</id>
 		<property column="usuario" name="usuario" type="string" />
-		<property column="clave" name="contrasenia" type="string" />
+		<property column="clave" name="clave" type="string" />
 		<one-to-one name="privilegio" class="com.unla.datos.Privilegio"></one-to-one>
 	</class>
 </hibernate-mapping>
