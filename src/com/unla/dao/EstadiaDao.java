@@ -52,6 +52,18 @@ public class EstadiaDao {
 		return objeto;
 		}
 	
+	public Estadia traerEstadiaPorCliente(long dni) throws HibernateException
+	{
+		Estadia objeto = null;
+		try{
+			iniciaOperacion();
+			objeto = (Estadia) session.createQuery("from Estadia e where e.cliente.dni="+dni).uniqueResult();
+		}finally{
+			session.close();
+		}
+		return objeto;
+		}
+	
 	@SuppressWarnings("unchecked")
 	
 	public List<Estadia> traerEstadia() throws Exception 

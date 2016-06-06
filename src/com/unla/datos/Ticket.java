@@ -12,6 +12,7 @@ public class Ticket {
 	private Estadia estadia;
 	private String descripcion;
 //modificar
+	
 	public int getIdTicket() {
 		return idTicket;
 	}

@@ -13,7 +13,10 @@
 	
 	<div>
 		Reserva
+		<form method="POST" action="/SistemaGestionHotelera/EmitirFactura">
 		Emitir y cobrar factura
+			<div class="input-registro"><input class="boton" type="submit" value="Emitir Factura"/></div>
+		</form>
 		Confirmar reservas
 		Generar Ticket de mantenimiento
 		Generar Ticket de consumo

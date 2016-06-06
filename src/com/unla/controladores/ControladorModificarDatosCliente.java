@@ -9,12 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.unla.datos.Cliente;
 import com.unla.excepciones.YaExisteClienteException;
 import com.unla.negocio.ClienteABM;
-import com.unla.negocio.Facade;
 
-public class RegistrarseController extends HttpServlet {
+public class ControladorModificarDatosCliente extends HttpServlet {
 
 	/**
 	 * 
@@ -26,11 +24,8 @@ public class RegistrarseController extends HttpServlet {
 		
 		try {
 			
-		ClienteABM clienteABM = Facade.getInstance().getClienteABM();
+		ClienteABM clienteABM = new ClienteABM();
 		
-		HttpSession session = request.getSession();
-		
-		Cliente cliente = session.getAttribute("cliente");
 		
 		String fechaNacimientoStr = request.getParameter("fechaNacimiento");
 		
@@ -47,7 +42,7 @@ public class RegistrarseController extends HttpServlet {
 		
 		//GregorianCalendar fechaNacimiento = Funciones.traerFecha(fechaNacimientoStr);
 		
-		clienteABM.modificarCliente(request.getParameter("nombre"), request.getParameter("apellido"), fechaNacimiento, cliente);
+		clienteABM.crearCliente(request.getParameter("nombre"), request.getParameter("apellido"), Long.parseLong(request.getParameter("dni")), fechaNacimiento, request.getParameter("usuario"), request.getParameter("contrasenia"));
 			
 		
 		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;
