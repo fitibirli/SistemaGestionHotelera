@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class ControladorEmitirFactura extends HttpServlet {
+public class ControladorConsumo extends HttpServlet {
 
 	/**
 	 * 
@@ -18,7 +18,7 @@ public class ControladorEmitirFactura extends HttpServlet {
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 		ServletException, IOException {
 			
-			request.getRequestDispatcher("/jsp/mostrarconsumos.jsp").forward(request, response);
+			request.getRequestDispatcher("/jsp/consumocliente.jsp").forward(request, response);
 
 		}
 		

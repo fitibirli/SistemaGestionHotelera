@@ -19,7 +19,10 @@
 		</form>
 		Confirmar reservas
 		Generar Ticket de mantenimiento
+		<form method="POST" action="/SistemaGestionHotelera/GenerarConsumo">
 		Generar Ticket de consumo
+			<div class="input-registro"><input class="boton" type="submit" value="Generar Ticket"/></div>
+		</form>
 		Generar Ticket de reparacion
 		
 	

@@ -39,4 +39,9 @@ public class EstadiaABM {
 		
 	}
 
+	public void actualizarEstadia(Estadia estadia) {
+		// TODO Auto-generated method stub
+		estadiaDao.actualizar(estadia);
+	}
+
 }

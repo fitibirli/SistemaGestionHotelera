@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.unla.datos.Cliente;
 import com.unla.datos.Estadia;
 
 public class EstadiaDao {
@@ -78,8 +79,22 @@ public class EstadiaDao {
 		return lista;
 		
 	}
+
 	
-	
+	public void actualizar(Estadia objeto) throws HibernateException {
+		
+		try {
+			iniciaOperacion();
+			session.update(objeto);
+			tx.commit();
+		} catch (HibernateException he) {
+			manejaExcepcion(he);
+			throw he;
+		} finally {
+			
+			session.close();
+		}
+	}
 	
 	
 	

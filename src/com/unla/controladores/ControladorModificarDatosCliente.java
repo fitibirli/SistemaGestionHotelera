@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.unla.excepciones.YaExisteClienteException;
 import com.unla.negocio.ClienteABM;
+import com.unla.negocio.Facade;
 
 public class ControladorModificarDatosCliente extends HttpServlet {
 
@@ -24,7 +25,7 @@ public class ControladorModificarDatosCliente extends HttpServlet {
 		
 		try {
 			
-		ClienteABM clienteABM = new ClienteABM();
+		ClienteABM clienteABM = Facade.getInstance().getClienteABM();
 		
 		
 		String fechaNacimientoStr = request.getParameter("fechaNacimiento");

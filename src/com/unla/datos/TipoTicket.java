@@ -4,6 +4,8 @@ public class TipoTicket {
 
 	private int idTipoTicket;
 	private String descripcion;
+	private long precio;
+	
 	public int getIdTipoTicket() {
 		return idTipoTicket;
 	}
@@ -16,7 +18,13 @@ public class TipoTicket {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	public long getPrecio() {
+		return precio;
+	}
+	public void setPrecio(long precio) {
+		this.precio = precio;
+	}
 
-
+	
 	
 }

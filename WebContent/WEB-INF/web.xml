@@ -50,8 +50,12 @@
     <servlet-class>com.unla.controladores.ControladorModificarDatos</servlet-class>
   </servlet>
   <servlet>
-  <servlet-name>ControladorModificarDatosCliente</servlet-name>
-    <servlet-class>com.unla.controladores.ControladorModificarDatosCliente</servlet-class>
+  <servlet-name>ControladorConsumoCliente</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorConsumoCliente</servlet-class>
+  </servlet>
+    <servlet>
+  <servlet-name>ControladorConsumo</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorConsumo</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ControladorLogin</servlet-name>
@@ -93,9 +97,20 @@
     <servlet-name>ControladorModificarDatos</servlet-name>
     <url-pattern>/ModificarDatos</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ControladorModificarDatosCliente</servlet-name>
     <url-pattern>/Modificar</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorConsumo</servlet-name>
+    <url-pattern>/GenerarConsumo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorConsumoCliente</servlet-name>
+    <url-pattern>/MostrarConsumos</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
   
 </web-app>

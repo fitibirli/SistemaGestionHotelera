@@ -90,4 +90,10 @@ public class Estadia {
 	{
 		this.setEstado(this.getEstado().confirmarReserva(empleado));
 	}
+	
+	public void agregarTicket(Ticket ticket){
+		
+		this.tickets.add(ticket);
+		
+	}
 }

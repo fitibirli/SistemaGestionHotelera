@@ -5,6 +5,7 @@ public class Facade {
 	private ClienteABM clienteABM = new ClienteABM();
 	private LoginABM loginABM = new LoginABM();
 	private EstadiaABM estadiaABM = new EstadiaABM();
+	private TipoTicketABM tipoTicketABM = new TipoTicketABM();
 	private static Facade instanciaFacade;
 	
 	protected Facade() {
@@ -30,6 +31,11 @@ public class Facade {
 
 	public EstadiaABM getEstadiaABM() {
 		return estadiaABM;
+	}
+
+	public TipoTicketABM getTipoTicketABM() {
+		// TODO Auto-generated method stub
+		return tipoTicketABM;
 	}
 
 	
