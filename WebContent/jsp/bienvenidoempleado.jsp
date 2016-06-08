@@ -24,6 +24,14 @@
 		</form>
 		
 		Generar Ticket de mantenimiento
+		
+		<!-- este te lleva a una pantalla donde te levanta de la base todas las habitaciones sucias 
+			
+			cuando llegas a esa pantalla, le das asignar mucama, esto te levanta todos los empleados del tipo MUCAMA y los pones en un select
+			
+			seleccionas uno y ahi le das asignar, y esto te genera un reporte de limpieza
+		-->
+		
 		<form method="POST" action="/SistemaGestionHotelera/GenerarConsumo">
 		Generar Ticket de consumo
 			<div class="input-registro"><input class="boton" type="submit" value="Generar Ticket"/></div>
