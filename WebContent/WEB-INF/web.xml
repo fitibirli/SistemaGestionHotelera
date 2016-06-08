@@ -53,9 +53,13 @@
   <servlet-name>ControladorConsumoCliente</servlet-name>
     <servlet-class>com.unla.controladores.ControladorConsumoCliente</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
   <servlet-name>ControladorConsumo</servlet-name>
     <servlet-class>com.unla.controladores.ControladorConsumo</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>ControladorModificarDatosCliente</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorModificarDatosCliente</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ControladorLogin</servlet-name>

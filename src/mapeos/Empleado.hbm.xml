@@ -8,25 +8,26 @@
 		</id>
 		<property column="nombre" name="nombre" type="string" />
 		<property column="apellido" name="apellido" type="string" />
-		<property column="dni" name="dni" type="long" />
+		<property column="dni" name="dni" type="double" />
 		<property column="fechaNacimiento" name="fechaNacimiento"
 			type="calendar" />
-		<property column="baja" name="baja" type="boolean" />
+		<!-- <property column="baja" name="baja" type="boolean" /> -->
 
-		<set name="reportesDeMantenimiento" table="reportemantenimiento" order-by="idReporte asc"
+	<!-- 	<set name="reportesDeMantenimiento" table="reportemantenimiento" order-by="idReporteMantenimiento asc"
 			inverse="true" lazy="true" fetch="select">
-			<key column="idEmpleado" not-null="true" />
+			<key column="legajo" not-null="true" />
 			<one-to-many class="com.unla.datos.ReporteMantenimiento" />
 		</set>
 
 		<set name="reportesDeLimpieza" table="reportelimpieza" order-by="idReporteLimpieza asc"
 			inverse="true" lazy="true" fetch="select">
-			<key column="idEmpleado" not-null="true" />
+			<key column="legajo" not-null="true" />
 			<one-to-many class="com.unla.datos.ReporteLimpieza" />
-		</set>
+		</set> -->
 
-		<one-to-one name="login" class="com.unla.datos.Login"></one-to-one>
-		<one-to-one name="contacto" class="com.unla.datos.Contacto"></one-to-one>
+		<one-to-one name="idLogin" class="com.unla.datos.Login"></one-to-one>
+		<one-to-one name="idTipoEmpleado" class="com.unla.datos.TipoEmpleado"></one-to-one>
+		<!-- <one-to-one name="contacto" class="com.unla.datos.Contacto"></one-to-one> -->
 
 
 

@@ -1,6 +1,7 @@
 package com.unla.negocio;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import com.unla.dao.EstadiaDao;
 import com.unla.datos.Cliente;
@@ -42,6 +43,19 @@ public class EstadiaABM {
 	public void actualizarEstadia(Estadia estadia) {
 		// TODO Auto-generated method stub
 		estadiaDao.actualizar(estadia);
+	}
+
+	public List<Estadia> traerEstadias() {
+		// TODO Auto-generated method stub
+		List<Estadia> estadias = null;
+		try {
+			 estadias = estadiaDao.traerEstadia();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return estadias;
+		
 	}
 
 	

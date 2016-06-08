@@ -7,5 +7,9 @@
 			<generator class="identity" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
+		
+		<many-to-one name="estado" column="idLogin" outer-join="false" lazy="false" not-found="ignore"
+        class="com.unla.datos.Login" >
+    </many-to-one>
 	</class>
 </hibernate-mapping>

@@ -20,435 +20,314 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `bd-sistema-gestion-hotelera` DEFAULT CHARACTER SET utf8 ;
 USE `bd-sistema-gestion-hotelera` ;
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`cliente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`cliente` (
-  `idCliente` INT(11) NOT NULL,
-  `nombre` VARCHAR(45) NULL DEFAULT NULL,
-  `apellido` VARCHAR(45) NULL DEFAULT NULL,
-  `dni` INT(15) NULL DEFAULT NULL,
-  PRIMARY KEY (`idCliente`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `cliente` (
+  `idCliente` int(11) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `apellido` varchar(45) DEFAULT NULL,
+  `dni` int(15) DEFAULT NULL,
+  `idLogin` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCliente`),
+  KEY `loginConstraint` (`idLogin`),
+  CONSTRAINT `loginConstraint` FOREIGN KEY (`idLogin`) REFERENCES `login` (`idLogin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`hotel`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`hotel` (
-  `idHotel` INT(1) NOT NULL,
-  `cuil` VARCHAR(13) NOT NULL,
-  `nombre` VARCHAR(45) NULL,
-  `categoria` INT(11) NULL DEFAULT NULL,
-  `checkin` VARCHAR(5) NULL DEFAULT NULL,
-  `chekout` VARCHAR(5) NULL DEFAULT NULL,
-  PRIMARY KEY (`idHotel`, `cuil`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+insert into `cliente`(`idCliente`,`nombre`,`apellido`,`dni`,`idLogin`) values (1,'fitibirli','porto',3123213,1);
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`tipoempleado`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`tipoempleado` (
-  `idTipoEmpleado` INT(11) NOT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`idTipoEmpleado`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+USE `bd-sistema-gestion-hotelera`;
 
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`empleado`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`empleado` (
-  `legajo` INT(11) NOT NULL,
-  `nombre` VARCHAR(45) NULL DEFAULT NULL,
-  `apellido` VARCHAR(45) NULL DEFAULT NULL,
-  `dni` INT(15) NULL DEFAULT NULL,
-  `fechaNacimiento` DATE NULL DEFAULT NULL,
-  `idTipoEmpleado` INT(11) NOT NULL,
-  PRIMARY KEY (`legajo`, `idTipoEmpleado`),
-  INDEX `fk_Empleado_TipoEmpleado1_idx` (`idTipoEmpleado` ASC),
-  CONSTRAINT `fk_Empleado_TipoEmpleado1`
-    FOREIGN KEY (`idTipoEmpleado`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`tipoempleado` (`idTipoEmpleado`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`contacto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`contacto` (
-  `idContacto` INT(11) NOT NULL,
-  `telefono` VARCHAR(20) NULL DEFAULT NULL,
-  `celular` VARCHAR(20) NULL DEFAULT NULL,
-  `email` VARCHAR(45) NULL DEFAULT NULL,
+CREATE TABLE `contacto` (
+  `idContacto` int(11) NOT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  `celular` varchar(20) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idContacto`),
-  CONSTRAINT `fk_contacto_cliente`
-    FOREIGN KEY (`idContacto`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_contacto_hotel`
-    FOREIGN KEY (`idContacto`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`hotel` (`idHotel`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_contacto_empleado`
-    FOREIGN KEY (`idContacto`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`empleado` (`legajo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  CONSTRAINT `fk_contacto_cliente` FOREIGN KEY (`idContacto`) REFERENCES `cliente` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_contacto_empleado` FOREIGN KEY (`idContacto`) REFERENCES `empleado` (`legajo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_contacto_hotel` FOREIGN KEY (`idContacto`) REFERENCES `hotel` (`idHotel`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`direccion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`direccion` (
-  `idDireccion` INT(11) NOT NULL,
-  `calle` VARCHAR(80) NULL DEFAULT NULL,
-  `numero` INT(11) NULL DEFAULT NULL,
-  `codigoPostal` VARCHAR(45) NULL DEFAULT NULL,
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `direccion` (
+  `idDireccion` int(11) NOT NULL,
+  `calle` varchar(80) DEFAULT NULL,
+  `numero` int(11) DEFAULT NULL,
+  `codigoPostal` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idDireccion`),
-  CONSTRAINT `fk_direccion_cliente`
-    FOREIGN KEY (`idDireccion`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_direccion_hotel`
-    FOREIGN KEY (`idDireccion`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`hotel` (`idHotel`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  CONSTRAINT `fk_direccion_cliente` FOREIGN KEY (`idDireccion`) REFERENCES `cliente` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_direccion_hotel` FOREIGN KEY (`idDireccion`) REFERENCES `hotel` (`idHotel`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`estadia`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`estadia` (
-  `idEstadia` INT(11) NOT NULL,
-  `fechaIngreso` DATE NULL DEFAULT NULL,
-  `fechaSalida` DATE NULL DEFAULT NULL,
-  `idEstadoEstadia` INT(11) NOT NULL,
-  `idTicket` INT(11) NULL DEFAULT NULL,
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `empleado` (
+  `legajo` int(11) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `apellido` varchar(45) DEFAULT NULL,
+  `dni` int(15) DEFAULT NULL,
+  `fechaNacimiento` date DEFAULT NULL,
+  `idTipoEmpleado` int(11) NOT NULL,
+  `idLogin` int(11) DEFAULT NULL,
+  PRIMARY KEY (`legajo`,`idTipoEmpleado`),
+  KEY `fk_Empleado_TipoEmpleado1_idx` (`idTipoEmpleado`),
+  CONSTRAINT `fk_Empleado_TipoEmpleado1` FOREIGN KEY (`idTipoEmpleado`) REFERENCES `tipoempleado` (`idTipoEmpleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `estadia` (
+  `idEstadia` int(11) NOT NULL,
+  `fechaIngreso` date DEFAULT NULL,
+  `fechaSalida` date DEFAULT NULL,
+  `idEstadoEstadia` int(11) NOT NULL,
+  `idTicket` int(11) DEFAULT NULL,
+  `idCliente` int(11) NOT NULL,
   PRIMARY KEY (`idEstadoEstadia`),
-  INDEX `fk_Estadia_TipoEstado1_idx` (`idEstadoEstadia` ASC),
-  CONSTRAINT `fk_estadia_cliente`
-    FOREIGN KEY (`idEstadia`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  KEY `fk_Estadia_TipoEstado1_idx` (`idEstadoEstadia`),
+  KEY `fk_estadia_cliente` (`idEstadia`),
+  KEY `ticketsConstraint` (`idTicket`),
+  KEY `clienteConstraint` (`idCliente`),
+  CONSTRAINT `estadoEstadiaConstraint` FOREIGN KEY (`idEstadoEstadia`) REFERENCES `estadoestadia` (`idEstadoEstadia`),
+  CONSTRAINT `ticketsConstraint` FOREIGN KEY (`idTicket`) REFERENCES `ticket` (`idTicket`),
+  CONSTRAINT `clienteConstraint` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`estadoestadia`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`estadoestadia` (
-  `idEstadoEstadia` INT(11) NOT NULL,
-  `nombre` VARCHAR(45) NULL DEFAULT NULL,
-  CONSTRAINT `fk_estadoEstadia_Estadia`
-    FOREIGN KEY (`idEstadoEstadia`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`estadia` (`idEstadia`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `estadoestadia` (
+  `idEstadoEstadia` int(11) NOT NULL,
+  PRIMARY KEY (`idEstadoEstadia`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`itemfactura`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`itemfactura` (
-  `idItemFactura` INT(11) NOT NULL,
-  `cantidad` INT(11) NULL DEFAULT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  `precioUnitario` DOUBLE NULL DEFAULT NULL,
-  PRIMARY KEY (`idItemFactura`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+insert into `estadoestadia`(`idEstadoEstadia`) values (0);
+insert into `estadoestadia`(`idEstadoEstadia`) values (1);
+insert into `estadoestadia`(`idEstadoEstadia`) values (2);
+insert into `estadoestadia`(`idEstadoEstadia`) values (3);
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`factura`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`factura` (
-  `idFactura` INT(11) NOT NULL,
-  `fechaEmision` DATE NULL DEFAULT NULL,
-  `legajo` INT(11) NOT NULL,
-  `idCliente` INT(11) NOT NULL,
-  `idItemFactura` INT(11) NOT NULL,
-  PRIMARY KEY (`idFactura`, `legajo`),
-  INDEX `fk_Factura_Empleado1_idx` (`legajo` ASC),
-  INDEX `fk_Factura_Cliente1_idx` (`idCliente` ASC),
-  INDEX `fk_Factura_Item1_idx` (`idItemFactura` ASC),
-  CONSTRAINT `fk_Factura_Cliente1`
-    FOREIGN KEY (`idCliente`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Factura_Empleado1`
-    FOREIGN KEY (`legajo`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`empleado` (`legajo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Factura_Item1`
-    FOREIGN KEY (`idItemFactura`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`itemfactura` (`idItemFactura`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `factura` (
+  `idFactura` int(11) NOT NULL,
+  `fechaEmision` date DEFAULT NULL,
+  `legajo` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `idItemFactura` int(11) NOT NULL,
+  PRIMARY KEY (`idFactura`,`legajo`),
+  KEY `fk_Factura_Empleado1_idx` (`legajo`),
+  KEY `fk_Factura_Cliente1_idx` (`idCliente`),
+  KEY `fk_Factura_Item1_idx` (`idItemFactura`),
+  CONSTRAINT `fk_Factura_Cliente1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Factura_Empleado1` FOREIGN KEY (`legajo`) REFERENCES `empleado` (`legajo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Factura_Item1` FOREIGN KEY (`idItemFactura`) REFERENCES `itemfactura` (`idItemFactura`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`formadepago`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`formadepago` (
-  `idFormaDePago` INT(11) NOT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`idFormaDePago`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `formadepago` (
+  `idFormaDePago` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idFormaDePago`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`habitacion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`habitacion` (
-  `idHabitacion` INT(11) NOT NULL,
-  `capacidadMax` INT(11) NULL DEFAULT NULL,
-  `disponibilidad` TINYINT(1) NULL DEFAULT NULL,
-  `precio` DOUBLE NULL DEFAULT NULL,
-  PRIMARY KEY (`idHabitacion`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+USE `bd-sistema-gestion-hotelera`;
 
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`habitacionestadia`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`habitacionestadia` (
-  `idHabitacion` INT(11) NOT NULL,
-  `idEstadia` INT(11) NOT NULL,
-  PRIMARY KEY (`idHabitacion`, `idEstadia`),
-  INDEX `fk_Habitacion_has_Estadia_Estadia1_idx` (`idEstadia` ASC),
-  INDEX `fk_Habitacion_has_Estadia_Habitacion1_idx` (`idHabitacion` ASC),
-  CONSTRAINT `fk_Habitacion_has_Estadia_Estadia1`
-    FOREIGN KEY (`idEstadia`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`estadia` (`idEstadia`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Habitacion_has_Estadia_Habitacion1`
-    FOREIGN KEY (`idHabitacion`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`habitacion` (`idHabitacion`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`login`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`login` (
-  `idLogin` INT(11) NOT NULL,
-  `usuario` VARCHAR(100) NULL DEFAULT NULL,
-  `clave` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`idLogin`),
-  CONSTRAINT `fk_login_empleado`
-    FOREIGN KEY (`idLogin`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`empleado` (`legajo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_login_cliente`
-    FOREIGN KEY (`idLogin`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`privilegio`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`privilegio` (
-  `idPrivilegio` INT(11) NOT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  `idLogin` INT(11) NOT NULL,
-  PRIMARY KEY (`idPrivilegio`, `idLogin`),
-  INDEX `fk_login_privilegio_idx` (`idLogin` ASC),
-  CONSTRAINT `fk_login_privilegio`
-    FOREIGN KEY (`idLogin`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`login` (`idLogin`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`recibo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`recibo` (
-  `idRecibo` INT(11) NOT NULL,
-  `fecha` DATE NULL DEFAULT NULL,
-  `importe` DOUBLE NULL DEFAULT NULL,
-  `idCliente` INT(11) NOT NULL,
-  `idFormaDePago` INT(11) NOT NULL,
-  PRIMARY KEY (`idRecibo`),
-  INDEX `fk_recibo_cliente1_idx` (`idCliente` ASC),
-  INDEX `fk_recibo_formadepago1_idx` (`idFormaDePago` ASC),
-  CONSTRAINT `fk_recibo_cliente1`
-    FOREIGN KEY (`idCliente`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_recibo_formadepago1`
-    FOREIGN KEY (`idFormaDePago`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`formadepago` (`idFormaDePago`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`reportelimpieza`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`reportelimpieza` (
-  `idReporteLimpieza` INT(11) NOT NULL,
-  `fecha` DATE NULL DEFAULT NULL,
-  `desperfeto` VARCHAR(45) NULL DEFAULT NULL,
-  `legajo` INT(11) NOT NULL,
+CREATE TABLE `reportelimpieza` (
+  `idReporteLimpieza` int(11) NOT NULL,
+  `fecha` date DEFAULT NULL,
+  `desperfeto` varchar(45) DEFAULT NULL,
+  `legajo` int(11) NOT NULL,
   PRIMARY KEY (`idReporteLimpieza`),
-  INDEX `fk_ReporteLimpieza_Empleado1_idx` (`legajo` ASC),
-  CONSTRAINT `fk_ReporteLimpieza_Empleado1`
-    FOREIGN KEY (`legajo`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`empleado` (`legajo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  KEY `fk_ReporteLimpieza_Empleado1_idx` (`legajo`),
+  CONSTRAINT `fk_ReporteLimpieza_Empleado1` FOREIGN KEY (`legajo`) REFERENCES `empleado` (`legajo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`reportemantenimiento`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`reportemantenimiento` (
-  `idReporte` INT(11) NOT NULL,
-  `reparacion` VARCHAR(45) NULL DEFAULT NULL,
-  `fechaOrigen` DATE NULL,
-  `fechaResolucion` DATE NULL DEFAULT NULL,
-  `desperfecto` VARCHAR(80) NULL DEFAULT NULL,
-  `terminado` BIT(1) NULL DEFAULT b'0',
-  `legajo` INT(11) NOT NULL,
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `reportemantenimiento` (
+  `idReporte` int(11) NOT NULL,
+  `reparacion` varchar(45) DEFAULT NULL,
+  `fechaOrigen` date DEFAULT NULL,
+  `fechaResolucion` date DEFAULT NULL,
+  `desperfecto` varchar(80) DEFAULT NULL,
+  `terminado` bit(1) DEFAULT b'0',
+  `legajo` int(11) NOT NULL,
   PRIMARY KEY (`idReporte`),
-  INDEX `fk_ReporteMantenimiento_Empleado1_idx` (`legajo` ASC),
-  CONSTRAINT `fk_ReporteMantenimiento_Empleado1`
-    FOREIGN KEY (`legajo`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`empleado` (`legajo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  KEY `fk_ReporteMantenimiento_Empleado1_idx` (`legajo`),
+  CONSTRAINT `fk_ReporteMantenimiento_Empleado1` FOREIGN KEY (`legajo`) REFERENCES `empleado` (`legajo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`ticket`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`ticket` (
-  `idTicket` INT(11) NOT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  `idFactura` INT(11) NOT NULL,
-  `idEstadia` INT(11) NOT NULL,
-  `legajo` INT(11) NOT NULL,
-  PRIMARY KEY (`idTicket`, `legajo`),
-  INDEX `fk_Ticket_Factura1_idx` (`idFactura` ASC),
-  INDEX `fk_Ticket_Estadia1_idx` (`idEstadia` ASC),
-  INDEX `fk_Ticket_Empleado1_idx` (`legajo` ASC),
-  CONSTRAINT `fk_Ticket_Empleado1`
-    FOREIGN KEY (`legajo`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`empleado` (`legajo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Ticket_Estadia1`
-    FOREIGN KEY (`idEstadia`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`estadia` (`idEstadia`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Ticket_Factura1`
-    FOREIGN KEY (`idFactura`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`factura` (`idFactura`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `servicio` (
+  `idServicio` int(11) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `precio` double DEFAULT NULL,
+  KEY `fk_servicio_ticket` (`idServicio`),
+  CONSTRAINT `fk_servicio_ticket` FOREIGN KEY (`idServicio`) REFERENCES `ticket` (`idTicket`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='		';
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`servicio`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`servicio` (
-  `idServicio` INT(11) NOT NULL,
-  `nombre` VARCHAR(45) NULL DEFAULT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  `precio` DOUBLE NULL DEFAULT NULL,
-  CONSTRAINT `fk_servicio_ticket`
-    FOREIGN KEY (`idServicio`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`ticket` (`idTicket`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COMMENT = '		';
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `ticket` (
+  `idTicket` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `legajo` int(11) NOT NULL,
+  `idTipoTicket` int(11) DEFAULT NULL,
+  `precio` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idTicket`,`legajo`),
+  KEY `fk_Ticket_Empleado1_idx` (`legajo`),
+  KEY `fk_Tipo_Ticket` (`idTipoTicket`),
+  CONSTRAINT `fk_Ticket_Empleado1` FOREIGN KEY (`legajo`) REFERENCES `empleado` (`legajo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Tipo_Ticket` FOREIGN KEY (`idTipoTicket`) REFERENCES `tipoticket` (`idTipoTicket`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`tipohabitacion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`tipohabitacion` (
-  `idTipoHabitacion` INT(11) NOT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `tipoempleado` (
+  `idTipoEmpleado` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idTipoEmpleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into `tipoempleado`(`idTipoEmpleado`,`descripcion`) values (1,'limpieza');
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `tipohabitacion` (
+  `idTipoHabitacion` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idTipoHabitacion`),
-  CONSTRAINT `fk_tipoHabitacion_Habitacion`
-    FOREIGN KEY (`idTipoHabitacion`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`habitacion` (`idHabitacion`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  CONSTRAINT `fk_tipoHabitacion_Habitacion` FOREIGN KEY (`idTipoHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- -----------------------------------------------------
--- Table `bd-sistema-gestion-hotelera`.`tipoticket`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bd-sistema-gestion-hotelera`.`tipoticket` (
-  `idTipoTicket` INT(11) NOT NULL,
-  `descripcion` VARCHAR(45) NULL DEFAULT NULL,
-  `cantidad` INT(11) NULL,
-  `precioUnitario` DOUBLE NULL,
-  `idTicket` INT(11) NOT NULL,
-  PRIMARY KEY (`idTipoTicket`, `idTicket`),
-  INDEX `fk_tipoticket_ticket1_idx` (`idTicket` ASC),
-  CONSTRAINT `fk_tipoticket_ticket1`
-    FOREIGN KEY (`idTicket`)
-    REFERENCES `bd-sistema-gestion-hotelera`.`ticket` (`idTicket`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `tipoticket` (
+  `idTipoTicket` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `precio` double DEFAULT NULL,
+  PRIMARY KEY (`idTipoTicket`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into `tipoticket`(`idTipoTicket`,`descripcion`,`precio`) values (0,'coca-cola',30);
+insert into `tipoticket`(`idTipoTicket`,`descripcion`,`precio`) values (1,'cafe',20);
+insert into `tipoticket`(`idTipoTicket`,`descripcion`,`precio`) values (2,'galletas',25);
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `habitacion` (
+  `idHabitacion` int(11) NOT NULL,
+  `capacidadMax` int(11) DEFAULT NULL,
+  `disponibilidad` tinyint(1) DEFAULT NULL,
+  `precio` double DEFAULT NULL,
+  PRIMARY KEY (`idHabitacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `habitacionestadia` (
+  `idHabitacion` int(11) NOT NULL,
+  `idEstadia` int(11) NOT NULL,
+  PRIMARY KEY (`idHabitacion`,`idEstadia`),
+  KEY `fk_Habitacion_has_Estadia_Estadia1_idx` (`idEstadia`),
+  KEY `fk_Habitacion_has_Estadia_Habitacion1_idx` (`idHabitacion`),
+  CONSTRAINT `fk_Habitacion_has_Estadia_Estadia1` FOREIGN KEY (`idEstadia`) REFERENCES `estadia` (`idEstadia`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Habitacion_has_Estadia_Habitacion1` FOREIGN KEY (`idHabitacion`) REFERENCES `habitacion` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `hotel` (
+  `idHotel` int(1) NOT NULL,
+  `cuil` varchar(13) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `categoria` int(11) DEFAULT NULL,
+  `checkin` varchar(5) DEFAULT NULL,
+  `chekout` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`idHotel`,`cuil`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `itemfactura` (
+  `idItemFactura` int(11) NOT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `precioUnitario` double DEFAULT NULL,
+  PRIMARY KEY (`idItemFactura`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `login` (
+  `idLogin` int(11) NOT NULL,
+  `usuario` varchar(100) DEFAULT NULL,
+  `clave` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idLogin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into `login`(`idLogin`,`usuario`,`clave`) values (1,'fito','fito');
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `privilegio` (
+  `idPrivilegio` int(11) NOT NULL,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `idLogin` int(11) NOT NULL,
+  PRIMARY KEY (`idPrivilegio`,`idLogin`),
+  KEY `fk_login_privilegio_idx` (`idLogin`),
+  CONSTRAINT `fk_login_privilegio` FOREIGN KEY (`idLogin`) REFERENCES `login` (`idLogin`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into `privilegio`(`idPrivilegio`,`descripcion`,`idLogin`) values (1,'hola',1);
+
+USE `bd-sistema-gestion-hotelera`;
+
+CREATE TABLE `recibo` (
+  `idRecibo` int(11) NOT NULL,
+  `fecha` date DEFAULT NULL,
+  `importe` double DEFAULT NULL,
+  `idCliente` int(11) NOT NULL,
+  `idFormaDePago` int(11) NOT NULL,
+  PRIMARY KEY (`idRecibo`),
+  KEY `fk_recibo_cliente1_idx` (`idCliente`),
+  KEY `fk_recibo_formadepago1_idx` (`idFormaDePago`),
+  CONSTRAINT `fk_recibo_cliente1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_recibo_formadepago1` FOREIGN KEY (`idFormaDePago`) REFERENCES `formadepago` (`idFormaDePago`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

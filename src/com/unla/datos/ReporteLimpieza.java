@@ -8,6 +8,7 @@ public class ReporteLimpieza {
 	private GregorianCalendar fecha;
 	private Empleado mucama;
 	private String desperfecto;
+	
 	public int getIdReporteLimpieza() {
 		return idReporteLimpieza;
 	}

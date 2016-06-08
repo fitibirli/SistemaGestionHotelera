@@ -13,11 +13,13 @@
 			<!--Mapeo Entidades -->
 			<mapping resource="mapeos/Cliente.hbm.xml"/>
 			<mapping resource="mapeos/Login.hbm.xml"/>
-			<!-- <mapping resource="mapeos/Recibo.hbm.xml"/>
-			<mapping resource="mapeos/Factura.hbm.xml"/>
-			<mapping resource="mapeos/Contacto.hbm.xml"/>
+			<!--<mapping resource="mapeos/Recibo.hbm.xml"/> -->
+			 <mapping resource="mapeos/Factura.hbm.xml"/>
+			 <mapping resource="mapeos/Empleado.hbm.xml"/>
+			 <mapping resource="mapeos/ReporteLimpieza.hbm.xml"/>
+			<mapping resource="mapeos/ReporteMantenimiento.hbm.xml"/>
+			<!-- <mapping resource="mapeos/Contacto.hbm.xml"/>
 			<mapping resource="mapeos/Direccion.hbm.xml"/>
-			<mapping resource="mapeos/Empleado.hbm.xml"/>
 			<mapping resource="mapeos/Estadia.hbm.xml"/>
 			<mapping resource="mapeos/EstadoEstadia.hbm.xml"/>
 			<mapping resource="mapeos/FormaDePago.hbm.xml"/>
@@ -25,8 +27,7 @@
 			<mapping resource="mapeos/Hotel.hbm.xml"/>
 			<mapping resource="mapeos/ItemFactura.hbm.xml"/>-->
 			<mapping resource="mapeos/Privilegio.hbm.xml"/><!--
-			<mapping resource="mapeos/ReporteLimpieza.hbm.xml"/>
-			<mapping resource="mapeos/ReporteMantenimiento.hbm.xml"/>
+
 			<mapping resource="mapeos/Servicio.hbm.xml"/>
 			<mapping resource="mapeos/Ticket.hbm.xml"/>
 			<mapping resource="mapeos/TicketTipo.hbm.xml"/>

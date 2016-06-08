@@ -14,7 +14,7 @@ import com.unla.datos.Hotel;
 import com.unla.negocio.Facade;
 import com.unla.negocio.LoginABM;
 public class ControladorLogin extends HttpServlet {
-	Hotel hotel=Hotel.getInstanciaHotel();		
+	//Hotel hotel=Hotel.getInstanciaHotel();		
 	private static final long serialVersionUID = 1L;
 	
 	/* NO deberia atender por GET */
