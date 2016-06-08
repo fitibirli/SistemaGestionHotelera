@@ -7,9 +7,12 @@
 			<generator class="identity" />
 		</id>
 		<property column="fechaOrigen" name="fechaOrigen" type="calendar" />
+		
 		<property column="fechaResolucion" name="fechaResolucion" type="calendar" />
+		<property column="reparacion" name="reparacion" type="string" />
 		<property column="desperfecto" name="desperfecto" type="string" />
-		<property column="resuelto" name="resuelto" type="boolean" />
+		<property column="terminado" name="terminado" type="boolean" />
+		<!-- <one-to-one name="legajo" class="com.unla.datos.Empleado"></one-to-one> -->
 	</class>
 </hibernate-mapping>
 

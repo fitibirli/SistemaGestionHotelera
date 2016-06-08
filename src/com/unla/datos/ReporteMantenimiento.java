@@ -10,7 +10,9 @@ public class ReporteMantenimiento {
 	private GregorianCalendar fechaResolucion;
 	private String desperfecto;
 	private Empleado empleadoACargo;
-	private boolean resuelto;
+	private boolean terminado;
+	
+	
 	public int getIdReporteMantenimiento() {
 		return idReporteMantenimiento;
 	}
@@ -47,12 +49,15 @@ public class ReporteMantenimiento {
 	public void setEmpleadoACargo(Empleado empleadoACargo) {
 		this.empleadoACargo = empleadoACargo;
 	}
-	public boolean isResuelto() {
-		return resuelto;
+	public boolean isTerminado() {
+		return terminado;
 	}
-	public void setResuelto(boolean resuelto) {
-		this.resuelto = resuelto;
+	public void setTerminado(boolean terminado) {
+		this.terminado = terminado;
 	}
+
+	
+	
 
 	
 }

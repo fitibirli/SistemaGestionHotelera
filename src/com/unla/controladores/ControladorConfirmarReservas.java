@@ -26,7 +26,7 @@ public class ControladorConfirmarReservas extends HttpServlet {
 			
 			EstadiaABM estadiaABM = Facade.getInstance().getEstadiaABM();
 			
-			estadiaABM.traerEstadias();
+			request.setAttribute("estadias", estadiaABM.traerEstadias());
 			
 			request.getRequestDispatcher("/jsp/mostrarreservassinconfirmar.jsp").forward(request, response);
 

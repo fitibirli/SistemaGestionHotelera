@@ -7,8 +7,8 @@
 			<generator class="identity" />
 		</id>
 		<property column="fechaEmision" name="fechaEmision" type="calendar" />
-		<property column="monto" name="monto" type="long" />
-		<many-to-one name="empleado" class="com.unla.datos.Empleado" column="idEmpleado" not-null="true"/>
+		<!-- <property column="monto" name="monto" type="long" /> -->
+		<many-to-one name="recepcionista" class="com.unla.datos.Empleado" column="legajo" not-null="true"/>
 		<many-to-one name="cliente" class="com.unla.datos.Cliente" column="idCliente" not-null="true"/>
 	</class>
 </hibernate-mapping>
