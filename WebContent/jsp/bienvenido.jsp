@@ -12,8 +12,10 @@
 	<h2>Que desea realizar?:</h2>
 	
 	<div>
-	Reserva:
-	Modificar Datos:
+	<form method="GET" action="/SistemaGestionHotelera/Reservas">
+	Reserva:<input class="boton" type="submit" name="reservas" value="Realizar una reserva">
+	Modificar Datos:<input class="boton" type="submit" name="modificarDatos" value="Modificar Datos">
+	</form>
 	</div>
 	 <%@include file="footer.jsp" %>
 </body>
