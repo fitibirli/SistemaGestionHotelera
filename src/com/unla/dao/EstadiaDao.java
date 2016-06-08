@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.unla.datos.Cliente;
 import com.unla.datos.Estadia;
 
 public class EstadiaDao {
@@ -52,6 +53,18 @@ public class EstadiaDao {
 		return objeto;
 		}
 	
+	public Estadia traerEstadiaPorCliente(long dni) throws HibernateException
+	{
+		Estadia objeto = null;
+		try{
+			iniciaOperacion();
+			objeto = (Estadia) session.createQuery("from Estadia e where e.cliente.dni="+dni).uniqueResult();
+		}finally{
+			session.close();
+		}
+		return objeto;
+		}
+	
 	@SuppressWarnings("unchecked")
 	
 	public List<Estadia> traerEstadia() throws Exception 
@@ -66,8 +79,22 @@ public class EstadiaDao {
 		return lista;
 		
 	}
+
 	
-	
+	public void actualizar(Estadia objeto) throws HibernateException {
+		
+		try {
+			iniciaOperacion();
+			session.update(objeto);
+			tx.commit();
+		} catch (HibernateException he) {
+			manejaExcepcion(he);
+			throw he;
+		} finally {
+			
+			session.close();
+		}
+	}
 	
 	
 	

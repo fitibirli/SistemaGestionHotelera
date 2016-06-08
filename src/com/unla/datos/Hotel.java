@@ -1,5 +1,7 @@
 package com.unla.datos;
 
+import com.unla.dao.HotelDao;
+
 public class Hotel {
 	private static Hotel instanciaHotel ;
 	protected int idHotel;
@@ -89,7 +91,17 @@ public class Hotel {
 		this.direccion = direccion;
 	}
 
-	private void inicializar() { // pueden leer la instancia de un archivo xml
-		/*settear el singleton Hotel con los datos de la base*/
+	private void inicializar() { // pueden leer la instancia de un archivo xml tmb
+		HotelDao hotelDao = new HotelDao();
+		
+		Hotel hotel = hotelDao.traerHotel(1);
+		this.setIdHotel(hotel.getIdHotel());
+		this.setCuil(hotel.getCuil());
+		this.setNombre(hotel.getNombre());
+		this.setCategoria(hotel.getCategoria());
+		//this.setContacto(hotel.getContacto()); necesito el contacto y la direccion del hotel
+		this.setCheckIn(hotel.getCheckIn());
+		this.setCheckOut(hotel.getCheckOut());
+		//this.setDireccion(hotel.getDireccion());
 	}
 }

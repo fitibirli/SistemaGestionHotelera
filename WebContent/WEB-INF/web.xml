@@ -42,8 +42,20 @@
     <servlet-class>com.unla.controladores.ControladorContacto</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>ControladorReservar</servlet-name>
+  <servlet-name>ControladorReservar</servlet-name>
     <servlet-class>com.unla.controladores.ControladorReservar</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>ControladorModificarDatos</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorModificarDatos</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>ControladorConsumoCliente</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorConsumoCliente</servlet-class>
+  </servlet>
+    <servlet>
+  <servlet-name>ControladorConsumo</servlet-name>
+    <servlet-class>com.unla.controladores.ControladorConsumo</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ControladorLogin</servlet-name>
@@ -81,5 +93,24 @@
     <servlet-name>ControladorReservar</servlet-name>
     <url-pattern>/Reservar</url-pattern>
   </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>ControladorModificarDatos</servlet-name>
+    <url-pattern>/ModificarDatos</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarDatosCliente</servlet-name>
+    <url-pattern>/Modificar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorConsumo</servlet-name>
+    <url-pattern>/GenerarConsumo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ControladorConsumoCliente</servlet-name>
+    <url-pattern>/MostrarConsumos</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
   
 </web-app>

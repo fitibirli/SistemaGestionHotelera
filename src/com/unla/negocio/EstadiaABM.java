@@ -30,5 +30,20 @@ public class EstadiaABM {
 		
 		return estadia;
 	}
+	
+	public Estadia traerEstadiaSegunCliente(long dni){
+		
+		Estadia estadia = estadiaDao.traerEstadia(dni);
+		
+		return estadia;
+		
+	}
+
+	public void actualizarEstadia(Estadia estadia) {
+		// TODO Auto-generated method stub
+		estadiaDao.actualizar(estadia);
+	}
+
+	
 
 }

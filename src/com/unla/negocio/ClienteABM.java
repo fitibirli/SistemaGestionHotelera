@@ -137,6 +137,14 @@ public class ClienteABM {
 		
 	}
 	
+	public void modificarCliente(String nombre, String apellido, GregorianCalendar fechaNacimiento, Cliente cliente){
+		
+		cliente.setNombre(nombre);
+		cliente.setApellido(apellido);
+		//cliente.setFechaNacimiento(fechaNacimiento);
+		dao.actualizar(cliente);
+	}
+	
 	
 	
 }

@@ -9,9 +9,11 @@ public class Ticket {
 	private TipoTicket tipoTicket;
 	private Factura factura;
 	//private Servicio servicio;
-	private Estadia estadia;
+	//private Estadia estadia;
 	private String descripcion;
+	private long precio;
 //modificar
+	
 	public int getIdTicket() {
 		return idTicket;
 	}
@@ -36,17 +38,23 @@ public class Ticket {
 	public void setFactura(Factura factura) {
 		this.factura = factura;
 	}
-	public Estadia getEstadia() {
+	/*public Estadia getEstadia() {
 		return estadia;
 	}
 	public void setEstadia(Estadia estadia) {
 		this.estadia = estadia;
-	}
+	}*/
 	public String getDescripcion() {
 		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public long getPrecio() {
+		return precio;
+	}
+	public void setPrecio(long precio) {
+		this.precio = precio;
 	}
 	
 	
