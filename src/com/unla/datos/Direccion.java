@@ -6,6 +6,10 @@ public class Direccion {
 	private String calle;
 	private int numero;
 	private String codigoPostal;
+	
+	public Direccion()
+	{
+	}
 
 	public Direccion(String calle, int numero, String codigoPostal)
 	{
@@ -18,7 +22,7 @@ public class Direccion {
 		return idDireccion;
 	}
 
-	public void setIdDireccion(int idDireccion) {
+	protected void setIdDireccion(int idDireccion) {
 		this.idDireccion = idDireccion;
 	}
 

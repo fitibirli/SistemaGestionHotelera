@@ -6,27 +6,33 @@
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost/bd-sistema-gestion-hotelera</property><!--jdbc:mysql://127.0.0.1/-->
 			<property name="connection.username">root</property>
-			<property name="connection.password"></property>
+			<property name="connection.password">peql123</property>
 			<property name="connection.pool_size">1</property>
 			<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 			<property name="show_sql">true</property> <!-- en true muestra hql en consola -->
 			<!--Mapeo Entidades -->
 			<mapping resource="mapeos/Cliente.hbm.xml"/>
 			<mapping resource="mapeos/Login.hbm.xml"/>
-			<!--<mapping resource="mapeos/Recibo.hbm.xml"/> -->
-			 <mapping resource="mapeos/Factura.hbm.xml"/>
-			 <mapping resource="mapeos/Empleado.hbm.xml"/>
-			 <mapping resource="mapeos/ReporteLimpieza.hbm.xml"/>
-			<mapping resource="mapeos/ReporteMantenimiento.hbm.xml"/>
-			<!-- <mapping resource="mapeos/Contacto.hbm.xml"/>
+			<mapping resource="mapeos/Privilegio.hbm.xml"/>
 			<mapping resource="mapeos/Direccion.hbm.xml"/>
-			<mapping resource="mapeos/Estadia.hbm.xml"/>
+			<mapping resource="mapeos/Contacto.hbm.xml"/>
+			<!--<mapping resource="mapeos/Recibo.hbm.xml"/> 
+			<mapping resource="mapeos/Factura.hbm.xml"/>
+			<mapping resource="mapeos/Empleado.hbm.xml"/>
+			<mapping resource="mapeos/ReporteLimpieza.hbm.xml"/>
+			<mapping resource="mapeos/ReporteMantenimiento.hbm.xml"/>-->
+			<!--			
+
+			-->
+			<!-- <mapping resource="mapeos/Estadia.hbm.xml"/>
 			<mapping resource="mapeos/EstadoEstadia.hbm.xml"/>
 			<mapping resource="mapeos/FormaDePago.hbm.xml"/>
 			<mapping resource="mapeos/Habitacion.hbm.xml"/>
 			<mapping resource="mapeos/Hotel.hbm.xml"/>
 			<mapping resource="mapeos/ItemFactura.hbm.xml"/>-->
-			<mapping resource="mapeos/Privilegio.hbm.xml"/><!--
+			
+			
+			<!--
 
 			<mapping resource="mapeos/Servicio.hbm.xml"/>
 			<mapping resource="mapeos/Ticket.hbm.xml"/>

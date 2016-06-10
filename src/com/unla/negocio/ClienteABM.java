@@ -7,7 +7,11 @@ import java.util.List;
 import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import com.unla.dao.ClienteDao;
+import com.unla.dao.ContactoDao;
+import com.unla.dao.DireccionDao;
 import com.unla.dao.EstadiaDao;
+import com.unla.dao.LoginDao;
+import com.unla.dao.PrivilegioDao;
 import com.unla.datos.Cliente;
 import com.unla.datos.Contacto;
 import com.unla.datos.Direccion;
@@ -22,9 +26,13 @@ import funciones.Funciones;
 public class ClienteABM {
 	
 	private ClienteDao dao = new ClienteDao();
+	private ContactoDao cDao = new ContactoDao();
+	private DireccionDao dDao = new DireccionDao();
 	private EstadiaDao eDao = new EstadiaDao();
+	private LoginDao lDao = new LoginDao();
+	private PrivilegioDao pDao = new PrivilegioDao();
 	
-	public void crearCliente(String nombre, String apellido, long dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia) throws Exception{
+	public void crearCliente(String nombre, String apellido, int dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia) throws Exception{
 		
 		Cliente cliente = new Cliente();
 		
@@ -58,6 +66,76 @@ public class ClienteABM {
 		
 		
 	}
+	
+	public int crearCliente(String nombre, String apellido, int dni, GregorianCalendar fechaNacimiento, Login login, Contacto contacto, Direccion direccion) throws Exception{
+		
+		LoginABM loginABM = new LoginABM();
+		Cliente cliente = new Cliente();
+		List<Cliente> listaClientes = dao.traerCliente();
+		
+		List<Privilegio> listaPrivilegio = pDao.traerPrivilegio();
+		
+		cliente.setNombre(nombre);
+		cliente.setApellido(apellido);
+		cliente.setDni(dni);
+		for (Cliente cliente2 : listaClientes) {
+			
+			if(cliente.getDni() == cliente2.getDni()){
+				throw new YaExisteClienteException();
+			}
+			else
+
+			cDao.agregar(contacto);
+			dDao.agregar(direccion);
+			cliente.setContacto(contacto);
+			cliente.setDireccion(direccion);
+			int ultimoIdLogin = loginABM.agregar(login.getUsuario(), login.getClave(), login.getPrivilegio());
+			cliente.setLogin(login);
+		}
+		
+		//privilegio.setDescripcion(descripcion);
+
+		
+		return dao.agregar(cliente);
+		
+		
+	}
+	
+	public int agregarCliente(String nombre, String apellido, int dni, GregorianCalendar fechaNacimiento, Login login, Contacto contacto, Direccion direccion) throws Exception{
+		
+		LoginABM loginABM = new LoginABM();
+		Cliente cliente = new Cliente();
+		//List<Cliente> listaClientes = dao.traerCliente();
+		
+		
+		cliente.setNombre(nombre);
+		cliente.setApellido(apellido);
+		cliente.setDni(dni);
+		cliente.setContacto(contacto);
+		cliente.setDireccion(direccion);
+		cliente.setLogin(login);
+		
+		/*for (Cliente cliente2 : listaClientes) {
+			
+			if(cliente.getDni() == cliente2.getDni()){
+				throw new YaExisteClienteException();
+			}
+			else
+
+
+			int ultimoIdLogin = loginABM.agregar(login.getUsuario(), login.getClave(), login.getPrivilegio());
+			cliente.setLogin(login);
+		}
+		*/
+		//privilegio.setDescripcion(descripcion);
+
+		
+		return dao.agregar(cliente);
+		
+		
+	}
+	
+	
 	
 	public List<Habitacion> traerHabitacionesDisponibles(GregorianCalendar fecha, Estadia e)
 	{

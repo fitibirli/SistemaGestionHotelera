@@ -5,10 +5,18 @@ public class Privilegio {
 	private int idPrivilegio;
 	private String descripcion;
 	
+	public Privilegio()
+	{
+	}
+	
+	public Privilegio(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	public int getIdPrivilegio() {
 		return idPrivilegio;
 	}
-	public void setIdPrivilegio(int idPrivilegio) {
+	protected void setIdPrivilegio(int idPrivilegio) {
 		this.idPrivilegio = idPrivilegio;
 	}
 	public String getDescripcion() {
@@ -18,6 +26,9 @@ public class Privilegio {
 		this.descripcion = descripcion;
 	}
 
-	
+	public boolean equals(Privilegio p)
+	{
+		return descripcion==p.getDescripcion();
+	}
 
 }

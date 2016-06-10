@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.unla.datos.Cliente;
+import com.unla.datos.Login;
 import com.unla.datos.Empleado;
 
 public class LoginDao {
@@ -22,6 +23,23 @@ public class LoginDao {
 		throw new HibernateException("ERROR en la capa de acceso a datos", he);
 	}
 	
+	public int agregar(Login objeto) {
+	int id = 0;
+	try {
+		iniciaOperacion();
+		id = Integer.parseInt(session.save(objeto).toString());
+		tx.commit();
+		} 
+	catch (HibernateException he) 
+	{
+		manejaExcepcion(he);
+		throw he;
+		} 
+	finally {
+		session.close();
+		}
+		return id;
+		}	
 	
 	public Cliente existeCliente(String usuario, String contrasenia) throws HibernateException {
 		Cliente objeto = null;
@@ -50,4 +68,17 @@ public class LoginDao {
 		}
 		return objeto;
 	}
+	
+	public Login traerLogin(long idLogin) throws HibernateException {
+		Login objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Login) session.get(Login.class, idLogin);
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	
 }

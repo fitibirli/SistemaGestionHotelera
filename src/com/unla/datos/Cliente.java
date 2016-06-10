@@ -9,19 +9,19 @@ public class Cliente {
 	private int idCliente;
 	private String nombre;
 	private String apellido;
-	private long dni;
+	private int dni;
 	private CuentaCliente cuenta;
 	private Contacto contacto;
 	private Direccion direccion;
 	private Login login;
-	private Set<Recibo> recibos;
+/*	private Set<Recibo> recibos;
 	private Set<Factura> facturas;
-
+*/
 	public Cliente()
 	{	
 	}
 	
-	public Cliente(String nombre, String apellido, long dni, CuentaCliente cuenta, Contacto contacto,
+	public Cliente(String nombre, String apellido, int dni, CuentaCliente cuenta, Contacto contacto,
 			Direccion direccion, Login login) {
 		super();
 		this.nombre = nombre;
@@ -45,7 +45,7 @@ public class Cliente {
 		return idCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
+	protected void setIdCliente(int idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -65,11 +65,11 @@ public class Cliente {
 		this.apellido = apellido;
 	}
 
-	public long getDni() {
+	public int getDni() {
 		return dni;
 	}
 
-	public void setDni(long dni) {
+	public void setDni(int dni) {
 		this.dni = dni;
 	}
 
@@ -105,7 +105,7 @@ public class Cliente {
 		this.login = login;
 	}
 
-	public Set<Recibo> getRecibos() {
+/*	public Set<Recibo> getRecibos() {
 		return recibos;
 	}
 
@@ -121,5 +121,5 @@ public class Cliente {
 		this.facturas = facturas;
 	}
 	
-	
+	*/
 }

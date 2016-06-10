@@ -9,6 +9,9 @@
 		<property column="apellido" name="apellido" type="string" />
 		<property column="nombre" name="nombre" type="string" />
 		<property column="dni" name="dni" type="int" />
+		<many-to-one name="login" column="idLogin" class="com.unla.datos.Login" unique="true" not-null="true"/>
+		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
+		<many-to-one name= "direccion" column="idDireccion"  class="com.unla.datos.Direccion" unique="true" not-null="true"  />
 		<!--  <set name="recibos" table="recibo" order-by="idRecibo asc" inverse="true" lazy="true" fetch="select">
 			<key column="idCliente" not-null="true" />
 			<one-to-many class="com.unla.datos.Recibo" />
@@ -17,9 +20,10 @@
 			<key column="idCliente" not-null="true" />
 			<one-to-many class="com.unla.datos.Factura" />
 		</set>-->
+		<!--<many-to-one name="direccion" column="idDireccion" unique="true" not-null="true"></many-to-one>
+		<many-to-one name="contacto" column="idContacto" unique="true" not-null="true"></many-to-one>-->
 		<!--<one-to-one name="estadia" class="com.unla.datos.Estadia"></one-to-one>-->
-		<one-to-one name="login" class="com.unla.datos.Login"></one-to-one>
-		<!--<one-to-one name="direccion" class="com.unla.datos.Direccion"></one-to-one>-->
+
 		<!--<one-to-one name="contacto" class="com.unla.datos.Contacto"></one-to-one>-->
 	</class>
 </hibernate-mapping>

@@ -3,18 +3,11 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="com.unla.datos.Contacto" table="contacto">
-		<id name="idContacto" column="idContacto">
-			<generator class="foreign">
-				<param name="property">cliente</param>
-				<param name="property">hotel</param>
-				<param name="property">empleado</param>
-			</generator>
+		<id column="idContacto" name="idContacto">
+			<generator class="native" />
 		</id>
-		<property name="telefono" type="string" column="telefono" />
-		<property name="celular" type="string" column="celular" />
-		<property name="email" type="string" column="email" />
-		<one-to-one name="cliente" class="com.unla.datos.Cliente"></one-to-one>
-		<one-to-one name="hotel" class="com.unla.datos.Hotel"></one-to-one>
-		<one-to-one name="empleado" class="com.unla.datos.Empleado"></one-to-one>
+		<property name="telefono" column="telefono" type="string" />
+		<property name="celular" column="celular" type="string" />
+		<property name="email" column="email" type="string" />
 	</class>
 </hibernate-mapping>

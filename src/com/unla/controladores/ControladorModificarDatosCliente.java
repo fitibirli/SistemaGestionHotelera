@@ -43,7 +43,7 @@ public class ControladorModificarDatosCliente extends HttpServlet {
 		
 		//GregorianCalendar fechaNacimiento = Funciones.traerFecha(fechaNacimientoStr);
 		
-		clienteABM.crearCliente(request.getParameter("nombre"), request.getParameter("apellido"), Long.parseLong(request.getParameter("dni")), fechaNacimiento, request.getParameter("usuario"), request.getParameter("contrasenia"));
+		clienteABM.crearCliente(request.getParameter("nombre"), request.getParameter("apellido"), Integer.parseInt(request.getParameter("dni")), fechaNacimiento, request.getParameter("usuario"), request.getParameter("contrasenia"));
 			
 		
 		request.getRequestDispatcher("/jsp/bienvenido.jsp").forward(request, response);;

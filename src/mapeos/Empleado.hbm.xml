@@ -11,23 +11,8 @@
 		<property column="dni" name="dni" type="double" />
 		<property column="fechaNacimiento" name="fechaNacimiento"
 			type="calendar" />
-		<!-- <property column="baja" name="baja" type="boolean" /> -->
-
-	<!-- 	<set name="reportesDeMantenimiento" table="reportemantenimiento" order-by="idReporteMantenimiento asc"
-			inverse="true" lazy="true" fetch="select">
-			<key column="legajo" not-null="true" />
-			<one-to-many class="com.unla.datos.ReporteMantenimiento" />
-		</set>
-
-		<set name="reportesDeLimpieza" table="reportelimpieza" order-by="idReporteLimpieza asc"
-			inverse="true" lazy="true" fetch="select">
-			<key column="legajo" not-null="true" />
-			<one-to-many class="com.unla.datos.ReporteLimpieza" />
-		</set> -->
-
-		<one-to-one name="idLogin" class="com.unla.datos.Login"></one-to-one>
-		<one-to-one name="idTipoEmpleado" class="com.unla.datos.TipoEmpleado"></one-to-one>
-		<!-- <one-to-one name="contacto" class="com.unla.datos.Contacto"></one-to-one> -->
+		<many-to-one name="login" column="idLogin" class="com.unla.datos.Login" unique="true" not-null="true"/>
+		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
 
 
 

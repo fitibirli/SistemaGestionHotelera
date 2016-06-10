@@ -5,7 +5,6 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import com.unla.datos.Empleado;
 
 public class EmpleadoDao {
@@ -34,5 +33,22 @@ public class EmpleadoDao {
 			session.close();
 		}
 		return lista;
+	}
+	
+	public int agregar(Empleado objeto) {
+		
+		int id = 0;
+		
+		try {
+			iniciaOperacion();
+			id = Integer.parseInt(session.save(objeto).toString());
+			tx.commit();
+		} catch (HibernateException he) {
+			manejaExcepcion(he);
+			throw he;
+		} finally {
+			session.close();
+		}
+		return id;
 	}
 }

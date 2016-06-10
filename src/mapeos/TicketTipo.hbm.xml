@@ -7,5 +7,6 @@
 			<generator class="identity" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
+		<property column="precio" name="precio" type="long" />
 	</class>
 </hibernate-mapping>

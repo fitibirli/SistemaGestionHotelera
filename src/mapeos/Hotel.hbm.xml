@@ -6,6 +6,7 @@
 		<id column="idHotel" name="idHotel">
 			<generator class="identity" />
 		</id>
+		<property column="cuil" name="cuil" type="string" />
 		<property column="nombre" name="nombre" type="string" />
 		<property column="categoria" name="categoria" type="int" />
 		<property column="checkIn" name="checkIn" type="calendar" />

@@ -22,7 +22,7 @@ public class Contacto {
 		return idContacto;
 	}
 
-	public void setIdContacto(int idContacto) {
+	protected void setIdContacto(int idContacto) {
 		this.idContacto = idContacto;
 	}
 

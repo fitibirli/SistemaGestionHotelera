@@ -88,12 +88,12 @@ public class ClienteDao {
 	}
 	
 	
-	public List<Cliente> traerCliente() throws HibernateException {
+	/*public List<Cliente> traerCliente() throws HibernateException {
 		List lista=null;
 		try {
 			iniciaOperacion();
 			System.out.println(session);
-			lista=session.createQuery("from Cliente c order by c.apellido asc c.nombreasc").list();
+			lista=session.createQuery("from Cliente c order by c.apellido asc c.nombre asc").list();
 		}catch(Exception e){
 			e.printStackTrace();
 		} finally {
@@ -101,4 +101,19 @@ public class ClienteDao {
 		}
 		return (List<Cliente>) lista;
 	}
+	*/
+	@SuppressWarnings("unchecked")
+	
+	public List<Cliente> traerCliente() throws HibernateException {
+		List<Cliente> lista=null;
+		try {
+			iniciaOperacion();
+			lista= session.createQuery( "from Cliente c order by c.apellido asc, c.nombre asc " ).list( );
+		} finally {
+			session.close();
+		}
+		return lista;
+	}
+	
+	
 }

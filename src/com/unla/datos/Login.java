@@ -10,9 +10,8 @@ public class Login {
 	public Login(){
 	}
 
-	public Login(int idLogin, String usuario, String clave, Privilegio privilegio) {
+	public Login(String usuario, String clave, Privilegio privilegio) {
 		super();
-		this.idLogin = idLogin;
 		this.usuario = usuario;
 		this.clave = clave;
 		this.privilegio = privilegio;
@@ -22,7 +21,7 @@ public class Login {
 		return idLogin;
 	}
 
-	public void setIdLogin(int idLogin) {
+	protected void setIdLogin(int idLogin) {
 		this.idLogin = idLogin;
 	}
 

@@ -4,10 +4,10 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.Login" table="login">
 		<id column="idLogin" name="idLogin">
-			<generator class="identity" />
+			<generator class="native" />
 		</id>
 		<property column="usuario" name="usuario" type="string" />
 		<property column="clave" name="clave" type="string" />
-		<one-to-one name="privilegio" class="com.unla.datos.Privilegio"></one-to-one>
+		<many-to-one name= "privilegio" column="idPrivilegio"  class="com.unla.datos.Privilegio" unique="true" not-null="true" />
 	</class>
 </hibernate-mapping>

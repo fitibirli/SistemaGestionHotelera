@@ -4,12 +4,12 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.Privilegio" table="privilegio">
 		<id column="idPrivilegio" name="idPrivilegio">
-			<generator class="identity" />
+			<generator class="native" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
 		
-		<many-to-one name="estado" column="idLogin" outer-join="false" lazy="false" not-found="ignore"
-        class="com.unla.datos.Login" >
-    </many-to-one>
+		<!--<many-to-one name="estado" column="idLogin" outer-join="false" lazy="false" not-found="ignore"
+        class="com.unla.datos.Login" >-->
+    
 	</class>
 </hibernate-mapping>
