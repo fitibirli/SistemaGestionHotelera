@@ -28,10 +28,11 @@ public class HotelABM {
 		hotel.setCheckIn(checkIn);
 		hotel.setCheckOut(checkOut);
 		
-		//setteo vacio por ahora
+		/*setteo vacio por ahora
 		hotel.setDireccion(direccion);
 		hotel.setContacto(contacto);
-				
+		*/
+		
 		return dao.agregar(hotel);
 	}
 

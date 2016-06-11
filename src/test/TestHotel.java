@@ -30,8 +30,8 @@ public class TestHotel {
 		String cuil="23-36771843-9";
 		String nombre="Hotel UNLa";
 		int categoria= 5;
-		String checkIn = "10:30hs";
-		String checkOut = "22:30hs";
+		String checkIn = "10:30";
+		String checkOut = "22:30";
 		/*
 		String calle="calle falsa";
 	    int numero=123;

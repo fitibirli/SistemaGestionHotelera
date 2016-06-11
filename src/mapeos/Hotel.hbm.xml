@@ -9,11 +9,12 @@
 		<property column="cuil" name="cuil" type="string" />
 		<property column="nombre" name="nombre" type="string" />
 		<property column="categoria" name="categoria" type="int" />
-		<property column="checkIn" name="checkIn" type="calendar" />
-		<property column="checkOut" name="checkOut" type="calendar" />
+		<property column="checkin" name="checkIn" type="string" />
+		<property column="chekout" name="checkOut" type="string" />
+		<!--  
 		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
 		<many-to-one name= "direccion" column="idDireccion"  class="com.unla.datos.Direccion" unique="true" not-null="true"  />
-
+		-->
 	</class>
 </hibernate-mapping>
 
