@@ -3,9 +3,6 @@ package com.unla.dao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import com.unla.datos.Cliente;
-import com.unla.datos.Estadia;
 import com.unla.datos.Hotel;
 
 public class HotelDao {

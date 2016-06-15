@@ -3,9 +3,10 @@ package com.unla.dao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import com.unla.datos.Direccion;
 
-public class DireccionDao {
+import com.unla.datos.TipoEmpleado;
+
+public class TipoEmpleadoDao {
 	
 	private static Session session;
 	private Transaction tx;
@@ -22,7 +23,7 @@ public class DireccionDao {
 			}
 		
 		
-		public int agregar(Direccion objeto) {
+		public int agregar(TipoEmpleado objeto) {
 		int id = 0;
 		try {
 			iniciaOperacion();
@@ -38,17 +39,6 @@ public class DireccionDao {
 			session.close();
 			}
 			return id;
-			}
-		
-		public Direccion traerDireccion(long idDireccion) throws HibernateException {
-			Direccion objeto = null;
-			try {
-				iniciaOperacion();
-				objeto = (Direccion) session.get(Direccion.class, idDireccion);
-				} finally {
-					session.close();
-					}
-			return objeto;
 			}
 
 }

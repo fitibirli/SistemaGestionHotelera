@@ -4,7 +4,7 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.TipoEmpleado" table="tipoempleado">
 		<id column="idTipoEmpleado" name="idTipoEmpleado">
-			<generator class="identity" />
+			<generator class="native" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
 	</class>

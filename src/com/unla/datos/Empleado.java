@@ -1,16 +1,15 @@
 package com.unla.datos;
 
 import java.util.GregorianCalendar;
-import java.util.List;
 
 public class Empleado {
 	
 	 private int legajo;
 	 private String nombre;
 	 private String apellido;
-	 private long dni;
+	 private int dni;
 	 private TipoEmpleado tipo;
-	 //private Contacto contacto;
+	 private Contacto contacto;
 	 private GregorianCalendar fechaNacimiento;
 	 private Login login;
 	// private List<ReporteLimpieza> reportesDeLimpieza;
@@ -18,6 +17,21 @@ public class Empleado {
 	 
 	public int getLegajo() {
 		return legajo;
+	}
+	
+	public Empleado()
+	{};
+	
+	public Empleado(String nombre, String apellido, int dni, TipoEmpleado tipo, Contacto contacto,
+			GregorianCalendar fechaNacimiento, Login login) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.tipo = tipo;
+		this.setContacto(contacto);
+		this.fechaNacimiento = fechaNacimiento;
+		this.login = login;
 	}
 	public void setLegajo(int legajo) {
 		this.legajo = legajo;
@@ -34,10 +48,10 @@ public class Empleado {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public long getDni() {
+	public int getDni() {
 		return dni;
 	}
-	public void setDni(long dni) {
+	public void setDni(int dni) {
 		this.dni = dni;
 	}
 	public TipoEmpleado getTipo() {
@@ -59,6 +73,16 @@ public class Empleado {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
+
+	public Contacto getContacto() {
+		return contacto;
+	}
+
+	public void setContacto(Contacto contacto) {
+		this.contacto = contacto;
+	}
+	
+	
 
 	 
 	 

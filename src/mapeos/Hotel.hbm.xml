@@ -10,11 +10,8 @@
 		<property column="nombre" name="nombre" type="string" />
 		<property column="categoria" name="categoria" type="int" />
 		<property column="checkin" name="checkIn" type="string" />
-		<property column="chekout" name="checkOut" type="string" />
-		<!--  
+		<property column="chekout" name="checkOut" type="string" />  
 		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
 		<many-to-one name= "direccion" column="idDireccion"  class="com.unla.datos.Direccion" unique="true" not-null="true"  />
-		-->
 	</class>
 </hibernate-mapping>
-

@@ -16,23 +16,18 @@ public class HotelABM {
 	
 	
 	public int crearHotel(String cuil, String nombre, int categoria, String checkIn,
-			String checkOut) /*throws Exception*/{
+			String checkOut, Contacto contacto, Direccion direccion) /*throws Exception*/{
 		
 		Hotel hotel = new Hotel();
-		Contacto contacto= new Contacto();
-		Direccion direccion=new Direccion();		
 		
 		hotel.setCuil(cuil);
 		hotel.setNombre(nombre);
 		hotel.setCategoria(categoria);
 		hotel.setCheckIn(checkIn);
 		hotel.setCheckOut(checkOut);
-		
-		/*setteo vacio por ahora
 		hotel.setDireccion(direccion);
 		hotel.setContacto(contacto);
-		*/
-		
+	
 		return dao.agregar(hotel);
 	}
 

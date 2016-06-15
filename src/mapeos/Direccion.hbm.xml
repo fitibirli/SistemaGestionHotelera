@@ -4,13 +4,11 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.Direccion" table="direccion">
 		<id column="idDireccion" name="idDireccion">
-			<generator class="native" />
+			<generator class="identity" />
 		</id>
 		<property column="calle" name="calle" type="string" />
 		<property column="numero" name="numero" type="int" />
 		<property column="codigoPostal" name="codigoPostal" type="string" />
-		
-		<!--  <one-to-many name="cliente" class="com.unla.datos.Cliente" ></one-to-many>-->
 		
 	</class>
 </hibernate-mapping>

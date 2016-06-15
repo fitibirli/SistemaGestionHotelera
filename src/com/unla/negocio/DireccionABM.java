@@ -8,12 +8,12 @@ public class DireccionABM {
 
 	DireccionDao dao = new DireccionDao();
 	
-	public int agregar(String calle, int numero, String codigoPostal) { //consultar si existe un cliente con el mismo dni, si existe arrojar laExcepcion 
+	public int agregar(String calle, int numero, String codigoPostal) {
 		Direccion d = new Direccion(calle, numero,codigoPostal);
 		return dao.agregar(d);
 }
 	
-	public int agregar(Direccion d) { //consultar si existe un cliente con el mismo dni, si existe arrojar laExcepcion 
+	public int agregar(Direccion d) { 
 		return dao.agregar(d);
 }
 	

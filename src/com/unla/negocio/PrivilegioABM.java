@@ -12,4 +12,12 @@ public class PrivilegioABM {
 
 	}
 	
+	public Privilegio traerPrivilegio(int idPrivilegio)
+	{
+		
+		Privilegio p = privilegioDao.traerPrivilegio(idPrivilegio);
+		
+		return p;
+	}
+	
 }

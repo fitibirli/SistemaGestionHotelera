@@ -4,14 +4,12 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import com.unla.datos.Privilegio;
 
 public class PrivilegioDao {
 	
 	private static Session session;
-	private static SessionFactory factory; 
 	private Transaction tx;
 
 	private void iniciaOperacion() throws HibernateException {
@@ -55,6 +53,18 @@ public class PrivilegioDao {
 				session.close();
 			}
 			return lista;
+		}
+		
+		public Privilegio traerPrivilegio(int idPrivilegio)
+		{
+			Privilegio objeto = null;
+			try{
+				iniciaOperacion();
+				objeto = (Privilegio) session.get(Privilegio.class, idPrivilegio);
+			} finally {
+				session.close();
+			}
+			return objeto;
 		}
 
 }

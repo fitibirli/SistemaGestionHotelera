@@ -3,9 +3,6 @@ package com.unla.negocio;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
-
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
-
 import com.unla.dao.ClienteDao;
 import com.unla.dao.ContactoDao;
 import com.unla.dao.DireccionDao;
@@ -29,7 +26,6 @@ public class ClienteABM {
 	private ContactoDao cDao = new ContactoDao();
 	private DireccionDao dDao = new DireccionDao();
 	private EstadiaDao eDao = new EstadiaDao();
-	private LoginDao lDao = new LoginDao();
 	private PrivilegioDao pDao = new PrivilegioDao();
 	
 	public void crearCliente(String nombre, String apellido, int dni, GregorianCalendar fechaNacimiento, String usuario, String contrasenia) throws Exception{
@@ -103,7 +99,6 @@ public class ClienteABM {
 	
 	public int agregarCliente(String nombre, String apellido, int dni, GregorianCalendar fechaNacimiento, Login login, Contacto contacto, Direccion direccion) throws Exception{
 		
-		LoginABM loginABM = new LoginABM();
 		Cliente cliente = new Cliente();
 		//List<Cliente> listaClientes = dao.traerCliente();
 		

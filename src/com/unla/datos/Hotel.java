@@ -1,7 +1,5 @@
 package com.unla.datos;
 
-import com.unla.dao.HotelDao;
-
 public class Hotel {
 	protected int idHotel;
 	protected String cuil;
@@ -11,15 +9,13 @@ public class Hotel {
 	protected String checkIn;
 	protected String checkOut;
 	protected Direccion direccion;
-
 	
 	public Hotel() {
 	}
 	
-	public Hotel(int idHotel, String cuil, String nombre, int categoria, Contacto contacto, String checkIn,
+	public Hotel(String cuil, String nombre, int categoria, Contacto contacto, String checkIn,
 			String checkOut, Direccion direccion) {
 		super();
-		this.idHotel = idHotel;
 		this.cuil = cuil;
 		this.nombre = nombre;
 		this.categoria = categoria;

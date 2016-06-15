@@ -8,12 +8,12 @@
 		</id>
 		<property column="nombre" name="nombre" type="string" />
 		<property column="apellido" name="apellido" type="string" />
-		<property column="dni" name="dni" type="double" />
+		<property column="dni" name="dni" type="int" />
 		<property column="fechaNacimiento" name="fechaNacimiento"
 			type="calendar" />
 		<many-to-one name="login" column="idLogin" class="com.unla.datos.Login" unique="true" not-null="true"/>
 		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
-
+		<many-to-one name= "tipo" column="idTipoEmpleado"  class="com.unla.datos.TipoEmpleado" unique="true" not-null="true" />
 
 
 	</class>

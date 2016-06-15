@@ -12,6 +12,8 @@
 		<many-to-one name="login" column="idLogin" class="com.unla.datos.Login" unique="true" not-null="true"/>
 		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
 		<many-to-one name= "direccion" column="idDireccion"  class="com.unla.datos.Direccion" unique="true" not-null="true"  />
+		
+		
 		<!--  <set name="recibos" table="recibo" order-by="idRecibo asc" inverse="true" lazy="true" fetch="select">
 			<key column="idCliente" not-null="true" />
 			<one-to-many class="com.unla.datos.Recibo" />

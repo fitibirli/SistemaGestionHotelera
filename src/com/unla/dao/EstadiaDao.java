@@ -5,8 +5,6 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import com.unla.datos.Cliente;
 import com.unla.datos.Estadia;
 
 public class EstadiaDao {
