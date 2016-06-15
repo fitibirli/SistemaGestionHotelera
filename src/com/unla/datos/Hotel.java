@@ -3,7 +3,6 @@ package com.unla.datos;
 import com.unla.dao.HotelDao;
 
 public class Hotel {
-	private static Hotel instanciaHotel ;
 	protected int idHotel;
 	protected String cuil;
 	protected String nombre;
@@ -14,19 +13,24 @@ public class Hotel {
 	protected Direccion direccion;
 
 	
-	protected Hotel() {
-		this.inicializar();
+	public Hotel() {
+	}
+	
+	public Hotel(int idHotel, String cuil, String nombre, int categoria, Contacto contacto, String checkIn,
+			String checkOut, Direccion direccion) {
+		super();
+		this.idHotel = idHotel;
+		this.cuil = cuil;
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.contacto = contacto;
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		this.direccion = direccion;
 	}
 
-	public static Hotel getInstanciaHotel() {
-		if (instanciaHotel == null) {
-			instanciaHotel = new Hotel();
-		}
-		return instanciaHotel;
-	}
-	
-	
-	
+
+
 	public int getIdHotel() {
 		return idHotel;
 	}
@@ -91,17 +95,5 @@ public class Hotel {
 		this.direccion = direccion;
 	}
 
-	private void inicializar() { // pueden leer la instancia de un archivo xml tmb
-		HotelDao hotelDao = new HotelDao();
-		
-		Hotel hotel = hotelDao.traerHotel(1);
-		this.setIdHotel(hotel.getIdHotel());
-		this.setCuil(hotel.getCuil());
-		this.setNombre(hotel.getNombre());
-		this.setCategoria(hotel.getCategoria());
-		//this.setContacto(hotel.getContacto()); necesito el contacto y la direccion del hotel
-		this.setCheckIn(hotel.getCheckIn());
-		this.setCheckOut(hotel.getCheckOut());
-		//this.setDireccion(hotel.getDireccion());
-	}
+
 }
