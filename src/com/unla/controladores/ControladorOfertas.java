@@ -22,13 +22,21 @@ public class ControladorOfertas extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/jsp/ofertas.jsp").forward(request, response);
+		doPost(request, response);
+
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.getRequestDispatcher("/jsp/ofertas.jsp").forward(request, response);
+		
+		String articulo=request.getParameter("articulo");
+		
+		if(articulo=="reservar"){
+			request.getRequestDispatcher("/jsp/confirmarreserva.jsp").forward(request, response);
+					
+		}
 	}
 
 }

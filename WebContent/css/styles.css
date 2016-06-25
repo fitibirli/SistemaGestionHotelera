@@ -91,7 +91,11 @@ input{
     height: 136px;
     float:left;
 }
-
+.imagen-ofertas{    
+	width: 600px;
+    height: 400px;
+    float:left;
+}
 .imagen-unla:hover{    
 	width: 134px;
     height: 136px;

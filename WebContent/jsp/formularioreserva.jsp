@@ -16,6 +16,7 @@
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<form method="POST" action="/SistemaGestionHotelera/Reservar">
+			
 						<div class="input-registro"><p class="texto-normal">Fecha de ingreso:</p></div> <div><input type="date" name="fechaIngreso" /></div>	
 						<div class="input-registro"><p class="texto-normal">Fecha de egreso:</p></div> <div><input type="date" name="fechaEgreso" /></div>	
 						<div class="input-registro"><input class="boton" type="submit" value="Consultar"/></div>

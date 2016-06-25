@@ -4,7 +4,7 @@
 
 <html>  
 <head>  
-  <title>Las mejores ofertas</title>
+  <title>Hotel UNLa.: Las mejores ofertas</title>
 </head>  
 <body>  
  <%@include file="header.jsp" %>
@@ -13,28 +13,28 @@
   	<div class="row">	
 		<div class="col-md-4"></div>
 		<div class="col-md-4"><h1 style="text-align:center">Reservas disponibles</h1>
-			<article class="oferta">
-				<div style="text-align:center">Tipo: PREMIUM</div>
+
+			<article class="oferta">		
+				<img class="imagen-ofertas" src="img/suite.jpg">
+				<div style="text-align:center">Tipo: SUITE</div>
 				<div style="text-align:center">Para 2 personas</div>
-				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center">Precio por dia: $3900</div>
 				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
 			</article>
 			<article class="oferta">
-				<div style="text-align:center">Tipo: PREMIUM</div>
+			<div style="text-align:left">
+				<img class="imagen-ofertas" src="img/premiun.jpg">
+			</div>
+				<div style="text-align:center">Tipo: PREMIUN</div>
 				<div style="text-align:center">Para 2 personas</div>
-				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center">Precio por dia: $1900</div>
 				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
 			</article>
 			<article class="oferta">
-				<div style="text-align:center">Tipo: PREMIUM</div>
+				<img class="imagen-ofertas" src="img/base.jpg">
+				<div style="text-align:center">Tipo: BASE</div>
 				<div style="text-align:center">Para 2 personas</div>
-				<div style="text-align:center">Precio por dia: $1500</div>
-				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
-			</article>
-			<article class="oferta">
-				<div style="text-align:center">Tipo: PREMIUM</div>
-				<div style="text-align:center">Para 2 personas</div>
-				<div style="text-align:center">Precio por dia: $1500</div>
+				<div style="text-align:center">Precio por dia: $1200</div>
 				<div style="text-align:center"><input class="boton" type="submit" name="reservar" value="Reservar"></div>
 			</article>
 		</div>
