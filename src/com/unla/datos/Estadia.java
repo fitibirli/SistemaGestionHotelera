@@ -7,13 +7,22 @@ public class Estadia {
 
 	private int idEstadia;
 	private Cliente cliente;
-	private List<Habitacion> habitaciones;
 	private GregorianCalendar fechaIngreso;
 	private GregorianCalendar fechaSalida;
 	private EstadoEstadia estado;
 	private List<Ticket> tickets;
+	private List<Habitacion> habitaciones;
 
+	public Estadia()
+	{
+	}
 	
+	public Estadia(Cliente cliente, GregorianCalendar fechaIngreso, GregorianCalendar fechaSalida) {
+		super();
+		this.cliente = cliente;
+		this.fechaIngreso = fechaIngreso;
+		this.fechaSalida = fechaSalida;
+	}
 
 	public int getIdEstadia() {
 		return idEstadia;
@@ -96,4 +105,12 @@ public class Estadia {
 		this.tickets.add(ticket);
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Estadia [cliente=" + cliente + ", fechaIngreso=" + fechaIngreso + ", fechaSalida=" + fechaSalida
+				+ ", estado=" + estado + "]";
+	}
+	
+	
 }

@@ -13,7 +13,9 @@ public abstract class EstadoEstadia {
 	public abstract EstadoEstadia enCurso();
 	public abstract EstadoEstadia terminarEstadia();
 	
-	
+	public EstadoEstadia(){
+		
+	}
 	public int getIdEstadoEstadia() {
 		return idEstadoEstadia;
 	}

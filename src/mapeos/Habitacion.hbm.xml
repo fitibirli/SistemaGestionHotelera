@@ -4,11 +4,17 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.Habitacion" table="habitacion">
 		<id column="idHabitacion" name="idHabitacion">
-			<generator class="identity" />
+			<generator class="indetity" />
 		</id>
+		<set table="habitacionestadia" name="estadias" outer-join="true">
+		<key column="idHabitacion"/>
+		<many-to-many column="idEstadia" class="com.unla.datos.Estadia"/>
+		</set>
 		<property column="capacidadMaxima" name="capacidadMaxima" type="int" />
 		<property column="disponible" name="disponible" type="boolean" />
-		<property column="precio" name="precio" type="double" />
+		<property column="precio" name="precio" type="double" />		
+
+		<many-to-one name= "tipohabitacion" column="idTipoHabitacion"  class="com.unla.datos.TipoHabitacion" unique="false" not-null="true" />    	
 	</class>
 </hibernate-mapping>
 

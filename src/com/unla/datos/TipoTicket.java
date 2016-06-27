@@ -6,6 +6,10 @@ public class TipoTicket {
 	private String descripcion;
 	private long precio;
 	
+	public TipoTicket(){
+		
+	}
+	
 	public int getIdTipoTicket() {
 		return idTipoTicket;
 	}

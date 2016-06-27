@@ -4,9 +4,9 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.EstadoEstadia" table="estadoestadia"
 		polymorphism="implicit">
-		<!--<cache usage="read-only" />  -->
+		<!--<cache usage="read-only" /> -->
 		<id name="idEstadoEstadia" column="idEstadoEstadia">
-			<generator class="assigned" />
+			<generator class="identity" />
 		</id>
 		<discriminator insert="false" column="idEstadoEstadia" />
 		<!-- <property name="nombre" column="nombre" /> -->

@@ -65,7 +65,7 @@ public class ClienteDao {
 		}
 	}
 	
-	public Cliente traerCliente(long idCliente) throws HibernateException {
+	public Cliente traerCliente(int idCliente) throws HibernateException {
 		Cliente objeto = null;
 		try {
 			iniciaOperacion();
@@ -76,7 +76,7 @@ public class ClienteDao {
 		return objeto;
 	}
 	
-	public Cliente traerCliente(int dni) throws HibernateException {
+	public Cliente traerCliente1(int dni) throws HibernateException {
 		Cliente objeto = null;
 		try {
 			iniciaOperacion();

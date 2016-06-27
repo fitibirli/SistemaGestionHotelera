@@ -39,7 +39,7 @@ public class EstadiaDao {
 		return id;
 	}
 	
-	public Estadia traerEstadia(long idEstadia) throws HibernateException
+	public Estadia traerEstadia(int idEstadia) throws HibernateException
 	{
 		Estadia objeto = null;
 		try{

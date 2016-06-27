@@ -4,21 +4,23 @@
 <hibernate-mapping>
 	<class name="com.unla.datos.Estadia" table="estadia">
 		<id column="idEstadia" name="idEstadia">
-			<generator class="foreign">
-				<param name="property">cliente</param>
-			</generator>
+			<generator class="identity" />
 		</id>
 		<property column="fechaIngreso" name="fechaIngreso" type="calendar" />
 		<property column="fechaSalida" name="fechaSalida" type="calendar" />
-		<set name="tickets" table="ticket" order-by="idTicket asc"
-			inverse="true" lazy="true" fetch="select">
-			<key column="idEstadia" not-null="true" />
-			<one-to-many class="com.unla.datos.Factura" />
+		
+		<set table="habitacionestadia" name="habitaciones" outer-join="true">
+		<key column="idEstadia"/>
+		<many-to-many column="idHabitacion" class="com.unla.datos.Habitacion"/>
 		</set>
-		<many-to-one name="estado" column="idEstadoEstadia" outer-join="false" lazy="false" not-found="ignore"
-        class="com.unla.datos.EstadoEstadia" >
-    </many-to-one>
-		<one-to-one name="cliente" class="com.unla.datos.Cliente"></one-to-one>
+		
+		<set name="tickets" table="ticket" cascade="all" >
+			<key column="idTicket"  not-null="true" />
+			<one-to-many class="com.unla.datos.Ticket" />
+		</set>
+		 
+		<many-to-one name="estado" column="idEstadoEstadia" outer-join="false" lazy="false" not-found="ignore" class="com.unla.datos.EstadoEstadia" ></many-to-one>
+		<many-to-one name="cliente" class="com.unla.datos.Cliente" unique="true"></many-to-one>
 	</class>
 </hibernate-mapping>
 

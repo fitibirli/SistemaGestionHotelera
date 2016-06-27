@@ -35,16 +35,15 @@ public class TestHotel {
 				
 		Direccion direccion = new Direccion(calle,numero,codigoPostal); //Instancias y agregas a la base de datos las tablas relacionadas a la tabla que querés crear.
 		
-		abmDireccion.agregar(direccion);
+		//abmDireccion.agregar(direccion);
 		
 		Contacto contacto = new Contacto(telefono,celular,email);
 		
-		abmContacto.agregar(contacto);
+		//abmContacto.agregar(contacto);
 		
 		//Después creas la tabla y le pasas por parametro la misma instancia
 
-		abmHotel.crearHotel(cuil, nombre, categoria, checkIn,checkOut,contacto, direccion);
-
+		abmHotel.crearHotel(cuil, nombre, categoria, checkIn,checkOut,contacto,direccion);
 
 }
 }

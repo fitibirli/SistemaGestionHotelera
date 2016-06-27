@@ -34,12 +34,20 @@ public class EstadiaABM {
 	
 	public Estadia traerEstadiaSegunCliente(long dni){
 		
-		Estadia estadia = estadiaDao.traerEstadia(dni);
+		Estadia estadia = estadiaDao.traerEstadia((int) dni);
 		
 		return estadia;
 		
 	}
 
+	public Estadia traerEstadia(int idEstadia){
+		
+		Estadia estadia = estadiaDao.traerEstadia(idEstadia);
+		
+		return estadia;
+		
+	}
+	
 	public void actualizarEstadia(Estadia estadia) {
 		// TODO Auto-generated method stub
 		estadiaDao.actualizar(estadia);

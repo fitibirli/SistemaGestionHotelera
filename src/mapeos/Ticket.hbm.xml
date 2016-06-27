@@ -10,9 +10,11 @@
 		<property column="descripcion" name="descripcion" type="string" />
 		<property column="precio" name="precio" type="int" />
 		
-		<one-to-one name="estadia" class="com.unla.datos.Estadia"></one-to-one>
+		<many-to-one name="estadia" class="com.unla.datos.Estadia"></many-to-one>
+<!--  
 		<one-to-one name="factura" class="com.unla.datos.Factura"></one-to-one>
 		<one-to-one name="legajo" class="com.unla.datos.Empleado"></one-to-one>
 		<one-to-one name="tipoticket" class="com.unla.datos.TipoTicket"></one-to-one>
+-->
 	</class>
 </hibernate-mapping>

@@ -14,6 +14,10 @@ public class Ticket {
 	private long precio;
 //modificar
 	
+	public Ticket()
+	{
+	}
+	
 	public int getIdTicket() {
 		return idTicket;
 	}

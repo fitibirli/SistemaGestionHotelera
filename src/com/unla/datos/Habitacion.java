@@ -1,5 +1,7 @@
 package com.unla.datos;
 
+import java.util.Set;
+
 public class Habitacion {
 
 	private int idHabitacion;
@@ -7,10 +9,15 @@ public class Habitacion {
 	private boolean disponible;
 	private double precio;
 	private TipoHabitacion tipoHabitacion;
+	private Set<Estadia> estadias;
+	
+	public Habitacion(){
+	}
+	
 	public int getIdHabitacion() {
 		return idHabitacion;
 	}
-	public void setIdHabitacion(int idHabitacion) {
+	protected void setIdHabitacion(int idHabitacion) {
 		this.idHabitacion = idHabitacion;
 	}
 	public int getCapacidadMaxima() {
@@ -38,6 +45,15 @@ public class Habitacion {
 		this.tipoHabitacion = tipoHabitacion;
 	}
 
+	public Set<Estadia> getEstadias() {
+		return estadias;
+	}
+
+	public void setEstadias(Set<Estadia> estadias) {
+		this.estadias = estadias;
+	}
+
+	
 	
 
 }

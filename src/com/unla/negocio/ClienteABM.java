@@ -209,7 +209,9 @@ public class ClienteABM {
 		return dao.traerCliente();
 		
 	}
-	
+	public Cliente traerCliente(int idCliente){
+		return dao.traerCliente(idCliente);
+	}
 	public void modificarCliente(String nombre, String apellido, GregorianCalendar fechaNacimiento, Cliente cliente){
 		
 		cliente.setNombre(nombre);
