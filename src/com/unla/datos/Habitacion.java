@@ -8,12 +8,22 @@ public class Habitacion {
 	private int capacidadMaxima;
 	private boolean disponible;
 	private double precio;
-	private TipoHabitacion tipoHabitacion;
+	private TipoHabitacion tipohabitacion;
 	private Set<Estadia> estadias;
 	
 	public Habitacion(){
 	}
 	
+	public Habitacion(int capacidadMaxima, boolean disponible, double precio, TipoHabitacion tipohabitacion) {
+		super();
+		this.capacidadMaxima = capacidadMaxima;
+		this.disponible = disponible;
+		this.precio = precio;
+		this.tipohabitacion=tipohabitacion;
+	}
+
+
+
 	public int getIdHabitacion() {
 		return idHabitacion;
 	}
@@ -38,11 +48,13 @@ public class Habitacion {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public TipoHabitacion getTipoHabitacion() {
-		return tipoHabitacion;
+
+	public TipoHabitacion getTipohabitacion() {
+		return tipohabitacion;
 	}
-	public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
-		this.tipoHabitacion = tipoHabitacion;
+
+	public void setTipohabitacion(TipoHabitacion tipohabitacion) {
+		this.tipohabitacion = tipohabitacion;
 	}
 
 	public Set<Estadia> getEstadias() {

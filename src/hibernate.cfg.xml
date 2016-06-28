@@ -25,11 +25,12 @@
 			<mapping resource="mapeos/EstadoEstadia.hbm.xml"/>
 			<mapping resource="mapeos/Habitacion.hbm.xml"/>
 			<mapping resource="mapeos/TipoHabitacion.hbm.xml"/>
+			<mapping resource="mapeos/TicketTipo.hbm.xml"/>
+			<mapping resource="mapeos/Servicio.hbm.xml"/>
 				
 			<!--			 
 			
 			<mapping resource="mapeos/Factura.hbm.xml"/>
-			<mapping resource="mapeos/TicketTipo.hbm.xml"/>
 			-->
 			<!--<mapping resource="mapeos/Recibo.hbm.xml"/> 
 			<mapping resource="mapeos/Factura.hbm.xml"/>
@@ -48,7 +49,6 @@
 			
 			<!--
 
-			<mapping resource="mapeos/Servicio.hbm.xml"/>
 			<mapping resource="mapeos/Ticket.hbm.xml"/>
 			<mapping resource="mapeos/TicketTipo.hbm.xml"/>
 			<mapping resource="mapeos/TipoEmpleado.hbm.xml"/>

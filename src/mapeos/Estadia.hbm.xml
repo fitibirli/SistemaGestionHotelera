@@ -15,7 +15,7 @@
 		</set>
 		
 		<set name="tickets" table="ticket" cascade="all" >
-			<key column="idTicket"  not-null="true" />
+			<key column="idTicket"  not-null="false" />
 			<one-to-many class="com.unla.datos.Ticket" />
 		</set>
 		 

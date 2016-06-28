@@ -1,6 +1,7 @@
 package com.unla.datos;
 
 import java.util.GregorianCalendar;
+import java.util.Set;
 
 public class Empleado {
 	
@@ -12,6 +13,8 @@ public class Empleado {
 	 private Contacto contacto;
 	 private GregorianCalendar fechaNacimiento;
 	 private Login login;
+	 private Set<Ticket>tickets;
+	 
 	// private List<ReporteLimpieza> reportesDeLimpieza;
 	// private List<ReporteMantenimiento> reportesDeMantenimiento;
 	 
@@ -80,6 +83,14 @@ public class Empleado {
 
 	public void setContacto(Contacto contacto) {
 		this.contacto = contacto;
+	}
+
+	public Set<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(Set<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 	
 	

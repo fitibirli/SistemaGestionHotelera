@@ -2,6 +2,7 @@ package com.unla.datos;
 
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Set;
 
 public class Estadia {
 
@@ -11,7 +12,7 @@ public class Estadia {
 	private GregorianCalendar fechaSalida;
 	private EstadoEstadia estado;
 	private List<Ticket> tickets;
-	private List<Habitacion> habitaciones;
+	private Set<Habitacion> habitaciones;
 
 	public Estadia()
 	{
@@ -39,12 +40,20 @@ public class Estadia {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
 
-	public List<Habitacion> getHabitaciones() {
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+
+	public Set<Habitacion> getHabitaciones() {
 		return habitaciones;
 	}
 
-	public void setHabitaciones(List<Habitacion> habitaciones) {
+	public void setHabitaciones(Set<Habitacion> habitaciones) {
 		this.habitaciones = habitaciones;
 	}
 
@@ -70,14 +79,6 @@ public class Estadia {
 
 	public void setEstado(EstadoEstadia estado) {
 		this.estado = estado;
-	}
-
-	public List<Ticket> getTickets() {
-		return tickets;
-	}
-
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
 	}
 
 	public void cancelarReserva()

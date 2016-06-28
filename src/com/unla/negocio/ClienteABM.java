@@ -131,7 +131,7 @@ public class ClienteABM {
 	}
 	
 	
-	
+/*	
 	public List<Habitacion> traerHabitacionesDisponibles(GregorianCalendar fecha, Estadia e)
 	{
 		List<Habitacion> lista = new ArrayList<Habitacion>();
@@ -168,7 +168,7 @@ public class ClienteABM {
 		return listaHabitacion;
 		
 	}
-	
+*/	
 	public void modificarDatos(Cliente c)	
 	{
 		dao.actualizar(c);

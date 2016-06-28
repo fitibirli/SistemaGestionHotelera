@@ -8,7 +8,7 @@ public class Ticket {
 	private Empleado empleado;
 	private TipoTicket tipoTicket;
 	private Factura factura;
-	//private Servicio servicio;
+	private Servicio servicio;
 	//private Estadia estadia;
 	private String descripcion;
 	private long precio;
@@ -21,7 +21,7 @@ public class Ticket {
 	public int getIdTicket() {
 		return idTicket;
 	}
-	public void setIdTicket(int idTicket) {
+	protected void setIdTicket(int idTicket) {
 		this.idTicket = idTicket;
 	}
 	public Empleado getEmpleado() {
@@ -59,6 +59,14 @@ public class Ticket {
 	}
 	public void setPrecio(long precio) {
 		this.precio = precio;
+	}
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
 	}
 	
 	

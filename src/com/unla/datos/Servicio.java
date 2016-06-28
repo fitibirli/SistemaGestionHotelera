@@ -1,11 +1,25 @@
 package com.unla.datos;
 
+import java.util.Set;
+
 public class Servicio {
 
 	private int idServicio;
 	private String nombre;
 	private String descripcion;
 	private double precio;
+	private Set<Ticket> tickets;
+	
+	
+	public Servicio(){
+	}
+	
+	public Servicio(String nombre, String descripcion, double precio) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.precio = precio;
+	}
 	public int getIdServicio() {
 		return idServicio;
 	}
@@ -29,6 +43,14 @@ public class Servicio {
 	}
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	public Set<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(Set<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
 	

@@ -14,7 +14,11 @@
 		<many-to-one name="login" column="idLogin" class="com.unla.datos.Login" unique="true" not-null="true"/>
 		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
 		<many-to-one name= "tipo" column="idTipoEmpleado"  class="com.unla.datos.TipoEmpleado" unique="true" not-null="true" />
-
+		
+		<set name="tickets" table="ticket" order-by="idTicket asc" inverse="true" lazy="true" fetch="select">
+			<key column="legajo" not-null="true" />
+			<one-to-many class="com.unla.datos.Ticket" />
+		</set>
 
 	</class>
 </hibernate-mapping>

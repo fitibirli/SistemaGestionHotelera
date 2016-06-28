@@ -1,10 +1,13 @@
 package com.unla.datos;
 
+import java.util.Set;
+
 public class TipoTicket {
 
 	private int idTipoTicket;
 	private String descripcion;
 	private long precio;
+	private Set<Ticket>tickets;
 	
 	public TipoTicket(){
 		
@@ -27,6 +30,14 @@ public class TipoTicket {
 	}
 	public void setPrecio(long precio) {
 		this.precio = precio;
+	}
+
+	public Set<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(Set<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 
 	
