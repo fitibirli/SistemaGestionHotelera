@@ -9,10 +9,20 @@ public class ReporteLimpieza {
 	private Empleado mucama;
 	private String desperfecto;
 	
+	public ReporteLimpieza(){
+	}
+	
+	public ReporteLimpieza(GregorianCalendar fecha, Empleado mucama, String desperfecto) {
+		super();
+		this.fecha = fecha;
+		this.mucama = mucama;
+		this.desperfecto = desperfecto;
+	}
+
 	public int getIdReporteLimpieza() {
 		return idReporteLimpieza;
 	}
-	public void setIdReporteLimpieza(int idReporteLimpieza) {
+	protected void setIdReporteLimpieza(int idReporteLimpieza) {
 		this.idReporteLimpieza = idReporteLimpieza;
 	}
 	public GregorianCalendar getFecha() {

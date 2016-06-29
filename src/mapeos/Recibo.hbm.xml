@@ -8,6 +8,9 @@
 		</id>
 		<property column="fecha" name="fecha" type="calendar" />
 		<property column="importe" name="importe" type="double" />
-		<one-to-one name="formaDePago" class="com.unla.datos.FormaDePago"></one-to-one>
+		<!-- Relaciones -->
+		<many-to-one name="cliente" class="com.unla.datos.Cliente" column="idCliente" unique="true" not-null="true"/>
+		<many-to-one name="formaDePago" column="idFormaDePago" class="com.unla.datos.FormaDePago" unique="true"></many-to-one>
+		
 	</class>
 </hibernate-mapping>

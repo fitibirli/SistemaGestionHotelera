@@ -8,19 +8,19 @@
 		</id>
 		<property column="fechaIngreso" name="fechaIngreso" type="calendar" />
 		<property column="fechaSalida" name="fechaSalida" type="calendar" />
-		
+		<!-- Relaciones -->
+		<!-- set muchos a muchos -->		
 		<set table="habitacionestadia" name="habitaciones" outer-join="true">
-		<key column="idEstadia"/>
-		<many-to-many column="idHabitacion" class="com.unla.datos.Habitacion"/>
+			<key column="idEstadia"/>
+			<many-to-many column="idHabitacion" class="com.unla.datos.Habitacion"/>
 		</set>
-		
-		<set name="tickets" table="ticket" cascade="all" >
+		<!-- set uno a muchos -->		
+		<set name="stickets" table="ticket" cascade="all" >
 			<key column="idTicket"  not-null="false" />
 			<one-to-many class="com.unla.datos.Ticket" />
 		</set>
-		 
 		<many-to-one name="estado" column="idEstadoEstadia" outer-join="false" lazy="false" not-found="ignore" class="com.unla.datos.EstadoEstadia" ></many-to-one>
-		<many-to-one name="cliente" class="com.unla.datos.Cliente" unique="true"></many-to-one>
+		<many-to-one name="cliente" column="idCliente" class="com.unla.datos.Cliente" unique="true"></many-to-one>
 	</class>
 </hibernate-mapping>
 

@@ -9,10 +9,24 @@ public class Recibo {
 	private double importe;
 	private FormaDePago formaDePago;
 	private Cliente cliente;
+	
+	public Recibo(){
+	}
+	
+	public Recibo(GregorianCalendar fecha, double importe, FormaDePago formaDePago, Cliente cliente) {
+		super();
+		this.fecha = fecha;
+		this.importe = importe;
+		this.formaDePago = formaDePago;
+		this.cliente = cliente;
+	}
+
+
+
 	public int getIdRecibo() {
 		return idRecibo;
 	}
-	public void setIdRecibo(int idRecibo) {
+	protected void setIdRecibo(int idRecibo) {
 		this.idRecibo = idRecibo;
 	}
 	public GregorianCalendar getFecha() {

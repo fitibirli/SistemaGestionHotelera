@@ -7,16 +7,22 @@ public class TipoTicket {
 	private int idTipoTicket;
 	private String descripcion;
 	private long precio;
-	private Set<Ticket>tickets;
+	//private Set<Ticket>tickets;
 	
-	public TipoTicket(){
-		
+	public TipoTicket(){	
 	}
 	
+	public TipoTicket(String descripcion, long precio) {
+		super();
+		this.descripcion = descripcion;
+		this.precio = precio;
+	}
+
 	public int getIdTipoTicket() {
 		return idTipoTicket;
 	}
-	public void setIdTipoTicket(int idTipoTicket) {
+	
+	protected void setIdTipoTicket(int idTipoTicket) {
 		this.idTipoTicket = idTipoTicket;
 	}
 	public String getDescripcion() {
@@ -32,6 +38,7 @@ public class TipoTicket {
 		this.precio = precio;
 	}
 
+	/*
 	public Set<Ticket> getTickets() {
 		return tickets;
 	}
@@ -39,7 +46,7 @@ public class TipoTicket {
 	public void setTickets(Set<Ticket> tickets) {
 		this.tickets = tickets;
 	}
-
+	*/
 	
 	
 }

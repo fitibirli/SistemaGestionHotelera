@@ -7,6 +7,12 @@
 			<generator class="identity" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
+		<!-- 
+		<set name="recibos" table="recibo" cascade="all" >
+			<key column="idFormaDePago"  not-null="false" />
+			<one-to-many class="com.unla.datos.Recibo" />
+		</set>
+		 -->
 	</class>
 </hibernate-mapping>
 

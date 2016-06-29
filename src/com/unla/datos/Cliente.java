@@ -14,9 +14,9 @@ public class Cliente {
 	private Contacto contacto;
 	private Direccion direccion;
 	private Login login;
-/*	private Set<Recibo> recibos;
+	private Set<Recibo> recibos;
 	private Set<Factura> facturas;
-*/
+
 	public Cliente()
 	{	
 	}
@@ -105,7 +105,7 @@ public class Cliente {
 		this.login = login;
 	}
 
-/*	public Set<Recibo> getRecibos() {
+	public Set<Recibo> getRecibos() {
 		return recibos;
 	}
 
@@ -121,5 +121,4 @@ public class Cliente {
 		this.facturas = facturas;
 	}
 	
-	*/
 }

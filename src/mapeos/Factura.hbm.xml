@@ -7,9 +7,14 @@
 			<generator class="identity" />
 		</id>
 		<property column="fechaEmision" name="fechaEmision" type="calendar" />
-		<!-- <property column="monto" name="monto" type="long" /> -->
+		<!-- Relaciones -->
 		<many-to-one name="recepcionista" class="com.unla.datos.Empleado" column="legajo" not-null="true"/>
 		<many-to-one name="cliente" class="com.unla.datos.Cliente" column="idCliente" not-null="true"/>
+		<!-- uno a muchos -->
+		<set name="sitems" table="itemfactura" cascade="all" >
+			<key column="idFactura"  not-null="false" />
+			<one-to-many class="com.unla.datos.ItemFactura" />
+		</set>
 	</class>
 </hibernate-mapping>
 

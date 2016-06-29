@@ -7,7 +7,6 @@ public class TipoEmpleado {
 	
 	public TipoEmpleado()
 	{
-		
 	}
 
 	public TipoEmpleado(String descripcion) {

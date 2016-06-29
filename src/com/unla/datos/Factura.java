@@ -2,12 +2,14 @@ package com.unla.datos;
 
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Set;
 
 public class Factura {
 	
 	private int idFactura;
 	private Cliente cliente;
 	private List<ItemFactura> items;
+	private Set<ItemFactura> sitems;
 	private GregorianCalendar fechaEmision;
 	private Empleado recepcionista;
 	
@@ -63,7 +65,14 @@ public class Factura {
 	public void setRecepcionista(Empleado recepcionista) {
 		this.recepcionista = recepcionista;
 	}
-	
+
+	public Set<ItemFactura> getSitems() {
+		return sitems;
+	}
+
+	public void setSitems(Set<ItemFactura> sitems) {
+		this.sitems = sitems;
+	}
 		
 
 }

@@ -16,7 +16,7 @@
 		<property column="disponible" name="disponible" type="boolean" />
 		<property column="precio" name="precio" type="double" />		
 		
-		<many-to-one name="tipohabitacion" class="com.unla.datos.TipoHabitacion"/>
+		<many-to-one name="tipohabitacion" column="idTipoHabitacion" class="com.unla.datos.TipoHabitacion" unique="true"/>
 
 	</class>
 </hibernate-mapping>

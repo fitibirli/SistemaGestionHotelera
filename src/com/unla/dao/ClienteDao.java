@@ -1,5 +1,7 @@
 package com.unla.dao;
 import java.util.List;
+
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -65,16 +67,6 @@ public class ClienteDao {
 		}
 	}
 	
-	public Cliente traerCliente(int idCliente) throws HibernateException {
-		Cliente objeto = null;
-		try {
-			iniciaOperacion();
-			objeto = (Cliente) session.get(Cliente.class, idCliente);
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
 	
 	public Cliente traerCliente1(int dni) throws HibernateException {
 		Cliente objeto = null;
@@ -87,6 +79,24 @@ public class ClienteDao {
 		return objeto;
 	}
 	
+	public Cliente traerCliente(int idCliente) throws HibernateException {
+		Cliente objeto = null;
+		try {
+			iniciaOperacion();
+			String hql="from Cliente where idCliente =:idCliente";
+			objeto=(Cliente) session.createQuery(hql).setParameter("idCliente", (int)idCliente).uniqueResult();
+			Hibernate.initialize(objeto.getFacturas());
+			Hibernate.initialize(objeto.getRecibos());
+			
+		}catch (HibernateException he) {
+			manejaExcepcion(he);
+			throw he;
+		} finally {
+				session.close();
+				}
+		return objeto;
+		}
+
 	
 	/*public List<Cliente> traerCliente() throws HibernateException {
 		List lista=null;

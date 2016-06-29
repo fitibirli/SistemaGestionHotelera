@@ -12,11 +12,26 @@ public class ReporteMantenimiento {
 	private Empleado empleadoACargo;
 	private boolean terminado;
 	
+	public ReporteMantenimiento(){
+	}
 	
+	public ReporteMantenimiento(String reparacion, GregorianCalendar fechaOrigen, GregorianCalendar fechaResolucion,
+			String desperfecto, Empleado empleadoACargo, boolean terminado) {
+		super();
+		this.reparacion = reparacion;
+		this.fechaOrigen = fechaOrigen;
+		this.fechaResolucion = fechaResolucion;
+		this.desperfecto = desperfecto;
+		this.empleadoACargo = empleadoACargo;
+		this.terminado = terminado;
+	}
+
+
+
 	public int getIdReporteMantenimiento() {
 		return idReporteMantenimiento;
 	}
-	public void setIdReporteMantenimiento(int idReporteMantenimiento) {
+	protected void setIdReporteMantenimiento(int idReporteMantenimiento) {
 		this.idReporteMantenimiento = idReporteMantenimiento;
 	}
 	public String getReparacion() {

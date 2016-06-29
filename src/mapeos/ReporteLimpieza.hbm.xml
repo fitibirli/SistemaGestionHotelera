@@ -8,7 +8,7 @@
 		</id>
 		<property column="fecha" name="fecha" type="calendar" />
 		<property column="desperfecto" name="desperfecto" type="string" />
-		
-		<one-to-one name="legajo" class="com.unla.datos.Empleado"></one-to-one>
+		<!-- Relaciones -->
+		<many-to-one name="legajo" column="legajo" class="com.unla.datos.Empleado"></many-to-one>
 	</class>
 </hibernate-mapping>

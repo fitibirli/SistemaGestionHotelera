@@ -7,17 +7,29 @@ public class Ticket {
 	private int idTicket;
 	private Empleado empleado;
 	private TipoTicket tipoTicket;
-	private Factura factura;
 	private Servicio servicio;
-	//private Estadia estadia;
+	private Estadia estadia;
 	private String descripcion;
 	private long precio;
-//modificar
+	//private Factura factura;
+	
+	//modificar
 	
 	public Ticket()
 	{
 	}
 	
+	public Ticket(Empleado empleado, TipoTicket tipoTicket, Servicio servicio, Estadia estadia, String descripcion,
+			long precio) {
+		super();
+		this.empleado = empleado;
+		this.tipoTicket = tipoTicket;
+		this.servicio = servicio;
+		this.estadia = estadia;
+		this.descripcion = descripcion;
+		this.precio = precio;
+	}
+
 	public int getIdTicket() {
 		return idTicket;
 	}
@@ -36,18 +48,18 @@ public class Ticket {
 	public void setTipoTicket(TipoTicket tipoTicket) {
 		this.tipoTicket = tipoTicket;
 	}
-	public Factura getFactura() {
+	/*public Factura getFactura() {
 		return factura;
 	}
 	public void setFactura(Factura factura) {
 		this.factura = factura;
-	}
-	/*public Estadia getEstadia() {
+	}*/
+	public Estadia getEstadia() {
 		return estadia;
 	}
 	public void setEstadia(Estadia estadia) {
 		this.estadia = estadia;
-	}*/
+	}
 	public String getDescripcion() {
 		return descripcion;
 	}

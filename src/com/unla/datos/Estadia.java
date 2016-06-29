@@ -12,6 +12,7 @@ public class Estadia {
 	private GregorianCalendar fechaSalida;
 	private EstadoEstadia estado;
 	private List<Ticket> tickets;
+	private Set<Ticket> stickets;
 	private Set<Habitacion> habitaciones;
 
 	public Estadia()
@@ -41,12 +42,22 @@ public class Estadia {
 		this.cliente = cliente;
 	}
 	
+	
+
 	public List<Ticket> getTickets() {
 		return tickets;
 	}
 
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
+	}
+
+	public Set<Ticket> getStickets() {
+		return stickets;
+	}
+
+	public void setStickets(Set<Ticket> stickets) {
+		this.stickets = stickets;
 	}
 
 	public Set<Habitacion> getHabitaciones() {

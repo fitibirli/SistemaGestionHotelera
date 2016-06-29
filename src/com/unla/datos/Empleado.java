@@ -14,7 +14,7 @@ public class Empleado {
 	 private GregorianCalendar fechaNacimiento;
 	 private Login login;
 	 private Set<Ticket>tickets;
-	 
+	 private Set<Factura> facturas;
 	// private List<ReporteLimpieza> reportesDeLimpieza;
 	// private List<ReporteMantenimiento> reportesDeMantenimiento;
 	 
@@ -91,6 +91,14 @@ public class Empleado {
 
 	public void setTickets(Set<Ticket> tickets) {
 		this.tickets = tickets;
+	}
+
+	public Set<Factura> getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(Set<Factura> facturas) {
+		this.facturas = facturas;
 	}
 	
 	

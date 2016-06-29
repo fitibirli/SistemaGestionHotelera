@@ -9,8 +9,8 @@
 		<property column="nombre" name="nombre" type="string" />
 		<property column="apellido" name="apellido" type="string" />
 		<property column="dni" name="dni" type="int" />
-		<property column="fechaNacimiento" name="fechaNacimiento"
-			type="calendar" />
+		<property column="fechaNacimiento" name="fechaNacimiento" type="calendar" />		
+		<!-- Relaciones -->	
 		<many-to-one name="login" column="idLogin" class="com.unla.datos.Login" unique="true" not-null="true"/>
 		<many-to-one name= "contacto" column="idContacto"  class="com.unla.datos.Contacto" unique="true" not-null="true" />
 		<many-to-one name= "tipo" column="idTipoEmpleado"  class="com.unla.datos.TipoEmpleado" unique="true" not-null="true" />
@@ -18,6 +18,11 @@
 		<set name="tickets" table="ticket" order-by="idTicket asc" inverse="true" lazy="true" fetch="select">
 			<key column="legajo" not-null="true" />
 			<one-to-many class="com.unla.datos.Ticket" />
+		</set>
+
+		<set name="facturas" table="factura" order-by="idFactura asc" inverse="true" lazy="true" fetch="select">
+			<key column="legajo" not-null="true" />
+			<one-to-many class="com.unla.datos.Factura" />
 		</set>
 
 	</class>

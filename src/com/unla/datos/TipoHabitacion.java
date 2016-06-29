@@ -6,7 +6,7 @@ public class TipoHabitacion {
 
 	private int idTipoHabitacion;
 	private String descripcion;
-	private Set<Habitacion> habitaciones;
+	//private Set<Habitacion> habitaciones;
 	
 	public TipoHabitacion(){
 	}
@@ -29,6 +29,7 @@ public class TipoHabitacion {
 		this.descripcion = descripcion;
 	}
 
+	/*
 	public Set<Habitacion> getHabitaciones() {
 		return habitaciones;
 	}
@@ -36,7 +37,7 @@ public class TipoHabitacion {
 	public void setHabitaciones(Set<Habitacion> habitaciones) {
 		this.habitaciones = habitaciones;
 	}
-
+	*/
 	
 
 	

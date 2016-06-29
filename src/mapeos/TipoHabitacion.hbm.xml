@@ -7,11 +7,11 @@
 			<generator class="identity" />
 		</id>
 		<property column="descripcion" name="descripcion" type="string" />
-   	
+   		<!-- 
    		<set name="habitaciones" table="habitacion" order-by="idTipoHabitacion asc" inverse="true" lazy="true" fetch="select">
 		<key column="idTipoHabitacion" not-null="true" />
 		<one-to-many class="com.unla.datos.Habitacion" />
 		</set>
-   	
+   	 	-->
 	</class>
 </hibernate-mapping>

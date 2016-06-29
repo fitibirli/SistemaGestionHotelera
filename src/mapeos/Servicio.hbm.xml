@@ -9,7 +9,7 @@
 		<property column="nombre" name="nombre" type="string" />
 		<property column="descripcion" name="descripcion" type="string" />
 		<property column="precio" name="precio" type="double" />
-		
+		<!-- Relaciones -->
 		<set name="tickets" table="ticket" order-by="idTicket asc" inverse="true" lazy="true" fetch="select">
 			<key column="idSerivicio" not-null="true" />
 			<one-to-many class="com.unla.datos.Ticket" />
